@@ -22,6 +22,8 @@ module.exports = {
         white : "#FFFFFF", //For primary backgrounds and text clarity.
         limeGreen : "#16A34A", //Use to emphasize discounts or urgent offers.
         darkOrange : "#EA580C", //Use to emphasize discounts or urgent offers.
+        bgRed : "#C8102E",
+        darkerBgRed : "#c70021"
       },
       transitionProperty: {
         width: "width",
