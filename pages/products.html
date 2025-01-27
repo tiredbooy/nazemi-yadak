@@ -15,7 +15,7 @@
         class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
       >
         <!-- Left Section (Menu Icon for Small Screens) -->
-        <div class="flex items-center gap-2 lg:hidden">
+        <div id="openMneu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
             href="#"
@@ -40,35 +40,35 @@
         <ul class="hidden lg:flex items-center gap-6 text-lightGray text-sm">
           <li>
             <a
-              href="/home"
+              href="/pages/home.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >خانه</a
             >
           </li>
           <li>
             <a
-              href="/products"
+              href="/pages/products.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >محصولات</a
             >
           </li>
           <li>
             <a
-              href="/category"
+              href="/pages/category.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >دسته بندی</a
             >
           </li>
           <li>
             <a
-              href="/toturial"
+              href="/pages/toturial.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >آموزش</a
             >
           </li>
           <li>
             <a
-              href="/contactus"
+              href="/pages/contactus.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >ارتباط با ما</a
             >
@@ -93,14 +93,73 @@
           ></i>
 
           <!-- User Icon -->
-          <i
+          <!-- <i
             class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
-          ></i>
+          ></i> -->
         </div>
       </nav>
     </header>
 
     <main>
+      <!-- ---------------------------------------------------------------------------------------------------- -->
+        <!-- Menu Modal -->
+        <div
+          id="menuModal"
+          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-20 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 hidden"
+        >
+          <!-- Search Input -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="جستجو..."
+              class="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 duration-150"
+            />
+            <i
+              class="fas fa-search absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+            ></i>
+          </div>
+
+          <!-- Menu Items -->
+          <ul class="flex flex-col gap-4 text-lg font-medium text-gray-700">
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >خانه</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >محصولات</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >دسته بندی</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >آموزش ها</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >ارتباط با ما</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+
       <div class="w-[80%] mx-auto p-5 flex flex-row gap-4">
         <!-- Filter Right Section -->
         <div class="border rounded-lg w-[20%] flex flex-col px-2 py-3">
@@ -395,5 +454,6 @@
     <script>
       AOS.init();
     </script>
+     <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

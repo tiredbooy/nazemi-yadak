@@ -15,7 +15,7 @@
         class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
       >
         <!-- Left Section (Menu Icon for Small Screens) -->
-        <div class="flex items-center gap-2 lg:hidden">
+        <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
             href="#"
@@ -40,35 +40,35 @@
         <ul class="hidden lg:flex items-center gap-6 text-lightGray text-sm">
           <li>
             <a
-              href="/home"
+              href="/pages/home.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >خانه</a
             >
           </li>
           <li>
             <a
-              href="/products"
+              href="/pages/products.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >محصولات</a
             >
           </li>
           <li>
             <a
-              href="/category"
+              href="/pages/category.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >دسته بندی</a
             >
           </li>
           <li>
             <a
-              href="/toturial"
+              href="/pages/toturial.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >آموزش</a
             >
           </li>
           <li>
             <a
-              href="/contactus"
+              href="/pages/contactus.html"
               class="relative cursor-pointer hover:text-white text-lg hover-underline"
               >ارتباط با ما</a
             >
@@ -86,17 +86,17 @@
           ></i>
         </div>
         <!-- Right Section (Search and User Icon) -->
-        <div class="flex items-center gap-2">  
-          <!-- Search Icon for Medium Screens -->  
-          <i  
-          class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"  
-      ></i>  
-      
-          <!-- User Icon -->  
-          <i  
-              class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"  
-          ></i>  
-      </div>  
+        <div class="flex items-center gap-2">
+          <!-- Search Icon for Medium Screens -->
+          <i
+            class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
+          ></i>
+
+          <!-- User Icon -->
+          <!-- <i
+            class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
+          ></i> -->
+        </div>
       </nav>
     </header>
 
@@ -104,7 +104,7 @@
       <!-- Hero Section -->
       <section
         id="heroSection"
-        class="relative w-full h-[90vh] overflow-hidden bg-lightGray"
+        class="relative w-full h-[95vh] overflow-hidden bg-lightGray"
       >
         <!-- Slide Content -->
         <div class="slides transition-transform duration-500 ease-in-out">
@@ -155,6 +155,63 @@
         <div
           class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50 indicator-dots"
         ></div>
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+        <!-- Menu Modal -->
+        <div id="menuModal"
+          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-0 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 hidden"
+        >
+          <!-- Search Input -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="جستجو..."
+              class="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 duration-150"
+            />
+            <i
+              class="fas fa-search absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+            ></i>
+          </div>
+
+          <!-- Menu Items -->
+          <ul class="flex flex-col gap-4 text-lg font-medium text-gray-700">
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >خانه</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >محصولات</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >دسته بندی</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >آموزش ها</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+                >ارتباط با ما</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- ---------------------------------------------------------------------------------------------------- -->
       </section>
       <!-- Category Base On car -->
       <section id="carCategory">
@@ -170,7 +227,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/tiggo8.png"
@@ -191,7 +248,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/arrizo.jpg"
@@ -212,7 +269,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/tiggo8.png"
@@ -233,7 +290,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/fownix.webp"
@@ -254,7 +311,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/tiggo8.png"
@@ -275,7 +332,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/tiggo8.png"
@@ -296,7 +353,7 @@
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
-                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300"
+                class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
                   src="../assets/images/tiggo8.png"
@@ -321,7 +378,8 @@
         </div>
       </section>
 
-      <section id="latestProducts"
+      <section
+        id="latestProducts"
         class="bg-steelGray py-8 px-4 md:px-8 flex flex-col gap-12"
       >
         <!-- Section Title -->
@@ -335,7 +393,8 @@
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto"
         >
           <!-- Product Card -->
-          <div data-aos="fade-left"
+          <div
+            data-aos="fade-left"
             class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
           >
             <div class="w-full h-40 overflow-hidden">
@@ -363,7 +422,8 @@
 
           <!-- Repeat Product Cards -->
           <!-- Add as many as needed -->
-          <div data-aos="fade-left"
+          <div
+            data-aos="fade-left"
             class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
           >
             <div class="w-full h-40 overflow-hidden">
@@ -389,7 +449,8 @@
             </div>
           </div>
 
-          <div data-aos="fade-left"
+          <div
+            data-aos="fade-left"
             class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
           >
             <div class="w-full h-40 overflow-hidden">
@@ -415,7 +476,8 @@
             </div>
           </div>
 
-          <div data-aos="fade-left"
+          <div
+            data-aos="fade-left"
             class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
           >
             <div class="w-full h-40 overflow-hidden">
@@ -459,7 +521,7 @@
           <!-- Slider Wrapper -->
           <div
             id="toturialCardContainer"
-            class="flex transition-transform duration-500 ease-in-out"
+            class="flex transition-transform duration-500 ease-in-out p-5"
           >
             <!-- Tutorial Card -->
             <div
@@ -560,7 +622,7 @@
         </div>
       </section>
 
-      <!-- section for why choose us -->
+      <!-- section for contact Us -->
       <section
         data-aos="fade-up"
         class="bg-steelGray py-12 px-4 text-lightGray flex flex-col items-center"
@@ -822,5 +884,6 @@
       }
     </script>
     <script src="../assets/scripts/main.js"></script>
+    <script src="../assets/scripts/homepage.js"></script>
   </body>
 </html>

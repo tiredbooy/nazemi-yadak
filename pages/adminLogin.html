@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/styles/tailwind.css" />
+  <link rel="stylesheet" href="../assets/styles/style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Admin Login</title>
+</head>
+<body class="bg-gray-50 h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">ورود ادمین</h1>
+    <form id="admin-login-form" method="POST" class="flex flex-col gap-4">
+      <!-- Username -->
+      <input
+        type="text"
+        name="username"
+        placeholder="نام کاربری"
+        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        required
+      />
+
+      <!-- Password -->
+      <input
+        type="password"
+        name="password"
+        placeholder="رمز عبور"
+        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        required
+      />
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-300"
+      >
+        ورود
+      </button>
+    </form>
+  </div>
+</body>
+</html>
