@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Home</title>
   </head>
   <body>
@@ -14,76 +14,89 @@
       <nav
         class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
       >
-        <!-- Left Section (Logo and Links) -->
-        <div class="flex items-center gap-32">
-          <!-- Company Logo -->
-          <div class="flex items-center gap-2">
-            <img
-              class="w-16"
-              src="../assets/images/cheryLogo.png"
-              alt="Company Logo"
-            />
-            <h2 class="font-bold text-white text-xl">
-              لوازم یدکی ناظمی
-            </h2>
-          </div>
-
-          <!-- Nav Items -->
-          <ul class="flex items-center gap-6 text-lightGray text-sm">
-            <li>
-              <a
-                href="#"
-                class="relative cursor-pointer hover:text-white text-lg hover-underline"
-                >خانه</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="relative cursor-pointer hover:text-white text-lg hover-underline"
-                >محصولات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="relative cursor-pointer hover:text-white text-lg hover-underline"
-                >دسته بندی</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="relative cursor-pointer hover:text-white text-lg hover-underline"
-                >آموزش</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="relative cursor-pointer hover:text-white text-lg hover-underline"
-                >ارتباط با ما</a
-              >
-            </li>
-          </ul>
+        <!-- Left Section (Menu Icon for Small Screens) -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
+          <a
+            href="#"
+            class="relative cursor-pointer text-white text-lg ml-2 hover-underline"
+            >منو</a
+          >
         </div>
 
-        <!-- Search Box -->
-        <div class="relative w-96">
+        <!-- Center Section (Logo and Company Name) -->
+        <div class="flex items-center justify-center gap-2 lg:gap-4">
+          <img
+            class="w-16"
+            src="../assets/images/cheryLogo.png"
+            alt="Chery Logo - لوازم یدکی ناظمی"
+          />
+          <h2 class="font-bold text-white text-lg lg:text-xl text-center">
+            لوازم یدکی ناظمی
+          </h2>
+        </div>
+
+        <!-- Nav Items (Hidden on Small Screens) -->
+        <ul class="hidden lg:flex items-center gap-6 text-lightGray text-sm">
+          <li>
+            <a
+              href="/home"
+              class="relative cursor-pointer hover:text-white text-lg hover-underline"
+              >خانه</a
+            >
+          </li>
+          <li>
+            <a
+              href="/products"
+              class="relative cursor-pointer hover:text-white text-lg hover-underline"
+              >محصولات</a
+            >
+          </li>
+          <li>
+            <a
+              href="/category"
+              class="relative cursor-pointer hover:text-white text-lg hover-underline"
+              >دسته بندی</a
+            >
+          </li>
+          <li>
+            <a
+              href="/toturial"
+              class="relative cursor-pointer hover:text-white text-lg hover-underline"
+              >آموزش</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contactus"
+              class="relative cursor-pointer hover:text-white text-lg hover-underline"
+              >ارتباط با ما</a
+            >
+          </li>
+        </ul>
+        <!-- Search Box for Larger Screens -->
+        <div class="relative hidden lg:block w-96">
           <input
             class="w-full h-10 rounded-xl px-4 py-2 pr-12 outline-none bg-[#F6F6F6] text-sm text-gray-700 placeholder-gray-500 focus:ring focus:ring-lightGray duration-300"
             type="search"
             placeholder="محصول، برند، دسته نظر مورد خود را وارد کنید..."
           />
           <i
-            class="fa-solid fa-magnifying-glass w-5 h-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-steelGray hover:text-black"
+            class="fa-solid fa-magnifying-glass w-5 h-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer hover:text-black"
           ></i>
         </div>
-
-        <!-- User Icon -->
-        <div>
-          <i class="fa-solid fa-user text-lightGray text-lg cursor-pointer"></i>
-        </div>
+        <!-- Right Section (Search and User Icon) -->
+        <div class="flex items-center gap-2">  
+          <!-- Search Icon for Medium Screens -->  
+          <i  
+          class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"  
+      ></i>  
+      
+          <!-- User Icon -->  
+          <i  
+              class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"  
+          ></i>  
+      </div>  
       </nav>
     </header>
 
@@ -93,14 +106,9 @@
         id="heroSection"
         class="relative w-full h-[90vh] overflow-hidden bg-lightGray"
       >
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-          <!-- <div class="absolute bg-black opacity-50 w-full h-[90vh]"></div> -->
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/cheryHero2.jpg"
-            alt="لوازم یدکی ماشین چینی"
-          />
+        <!-- Slide Content -->
+        <div class="slides transition-transform duration-500 ease-in-out">
+          <!-- Dynamic slides will be injected here -->
         </div>
 
         <!-- Overlay for Text Visibility -->
@@ -110,63 +118,55 @@
         <div
           class="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-8 md:px-12"
         >
-          <div class="max-w-4xl">
+          <div class="max-w-4xl heroContent">
             <h1
+              id="heroSectionTitle"
               class="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
-            >
-              بهترین لوازم یدکی برای ماشین‌های چینی
-            </h1>
-            <p class="text-white text-sm sm:text-lg md:text-xl mb-6">
-              ما ارائه‌دهنده بهترین و باکیفیت‌ترین لوازم یدکی برای انواع
-              خودروهای چینی هستیم. کیفیت تضمینی، قیمت مناسب و ارسال سریع به
-              سراسر کشور.
-            </p>
+            ></h1>
+            <p
+              id="heroSectionDes"
+              class="text-white text-sm sm:text-lg md:text-xl mb-6"
+            ></p>
             <a
               href="#"
-              class="inline-block bg-bgRed hover:bg-darkerBgRed text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all"
+              class="inline-block hero-button bg-bgRed hover:bg-darkerBgRed text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all"
             >
               مشاهده محصولات
+              <!-- Initial text; will be updated dynamically -->
             </a>
           </div>
         </div>
 
         <!-- Navigation Arrows -->
         <button
+          id="prevSlide"
           class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition cursor-pointer z-50"
         >
           <i class="fas fa-angle-left"></i>
         </button>
         <button
+          id="nextSlide"
           class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition z-50"
         >
-          <i class="fas fa-angle-right cursor-pointer"></i>
+          <i class="fas fa-angle-right"></i>
         </button>
 
         <!-- Indicator Dots -->
         <div
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50"
-        >
-          <div
-            class="w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer z-50"
-          ></div>
-          <div
-            class="w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer z-50"
-          ></div>
-          <div
-            class="w-3 h-3 bg-white rounded-full opacity-100 cursor-pointer z-50"
-          ></div>
-        </div>
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50 indicator-dots"
+        ></div>
       </section>
       <!-- Category Base On car -->
       <section id="carCategory">
         <div class="container mx-auto py-12 flex flex-col items-center gap-12">
-          <h2 class="text-center text-4xl font-bolder mb-8">
+          <h2 class="text-center text-4xl font-bold mb-8">
             دسته بندی ماشین ها
           </h2>
 
           <div class="flex flex-wrap gap-6 justify-center w-full px-4">
             <!-- Car Item -->
-            <div  data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -186,7 +186,8 @@
             </div>
 
             <!-- Car Item -->
-            <div  data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -206,7 +207,8 @@
             </div>
 
             <!-- Car Item -->
-            <div data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -226,7 +228,8 @@
             </div>
 
             <!-- Car Item -->
-            <div data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -246,7 +249,8 @@
             </div>
 
             <!-- Car Item -->
-            <div data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -266,7 +270,8 @@
             </div>
 
             <!-- Car Item -->
-            <div data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -286,7 +291,8 @@
             </div>
 
             <!-- Car Item -->
-            <div data-aos="fade-right"
+            <div
+              data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
@@ -304,7 +310,6 @@
               </div>
               <h3 class="text-center text-lg font-bold">تیگو 8</h3>
             </div>
-
           </div>
 
           <button
@@ -316,306 +321,350 @@
         </div>
       </section>
 
-      <section id="latestProducts" class="bg-steelGray p-8 flex flex-col gap-12">
-        <h2 class="text-center text-lightGray font-bold text-4xl">
+      <section id="latestProducts"
+        class="bg-steelGray py-8 px-4 md:px-8 flex flex-col gap-12"
+      >
+        <!-- Section Title -->
+        <h2 class="text-center text-lightGray font-bold text-2xl md:text-4xl">
           آخرین محصولات
         </h2>
 
-        <div id="latestProductCardContainer" class="w-full container mx-auto flex flex-row gap-12 items-center justify-center px-16 py-8">
+        <!-- Product Cards Container -->
+        <div
+          id="latestProductCardContainer"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto"
+        >
           <!-- Product Card -->
-          <div data-aos="fade-left" class="productCard bg-lightGray rounded-xl w-full md:w-1/4 flex flex-col gap-1 shadow-xl">
-            <!-- Card Image -->
-            <div class="w-full max-h-[20vh] overflow-hidden rounded-tr-xl rounded-tl-xl  shadow-md">
-              <img src="../assets/images/products/p1.jpg" alt="">
+          <div data-aos="fade-left"
+            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
+          >
+            <div class="w-full h-40 overflow-hidden">
+              <img
+                src="../assets/images/products/p1.jpg"
+                alt="چراغ تیگو 8"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <!-- Card Details -->
-            <div class="p-3 flex flex-col gap-3 ">
-              <!-- Product Name -->
-              <h3 class="font-semibold text-xl cursor-pointer"> 
+            <div class="p-4 flex flex-col gap-2">
+              <h3
+                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
+              >
                 چراغ تیگو 8
               </h3>
-
-              <span class="text-gray-900">
+              <span class="text-gray-700 text-sm text-center">
                 کد کالا : BP-8100
               </span>
-              <!-- product price -->
-              <div class="flex flex-row justify-between">
-                <span>
-                  تیگو 8
-                </span>
-                <span class="text-limeGreen font-bold">
-                  تومان 149,000
-                </span>
+              <div class="flex flex-row justify-between text-sm md:text-base">
+                <span>تیگو 8</span>
+                <span class="text-bgRed font-bold">تومان 149,000</span>
               </div>
-
             </div>
-
           </div>
 
-          <div data-aos="fade-left" class="productCard bg-lightGray rounded-xl w-full md:w-1/4 flex flex-col gap-1 shadow-xl">
-            <!-- Card Image -->
-            <div class="w-full max-h-[20vh] overflow-hidden rounded-tr-xl rounded-tl-xl  shadow-md">
-              <img src="../assets/images/products/p1.jpg" alt="">
+          <!-- Repeat Product Cards -->
+          <!-- Add as many as needed -->
+          <div data-aos="fade-left"
+            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
+          >
+            <div class="w-full h-40 overflow-hidden">
+              <img
+                src="../assets/images/products/p1.jpg"
+                alt="چراغ تیگو 8"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <!-- Card Details -->
-            <div class="p-3 flex flex-col gap-3 ">
-              <!-- Product Name -->
-              <h3 class="font-semibold text-xl cursor-pointer"> 
+            <div class="p-4 flex flex-col gap-2">
+              <h3
+                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
+              >
                 چراغ تیگو 8
               </h3>
-
-              <span class="text-gray-900">
+              <span class="text-gray-700 text-sm text-center">
                 کد کالا : BP-8100
               </span>
-              <!-- product price -->
-              <div class="flex flex-row justify-between">
-                <span>
-                  تیگو 8
-                </span>
-                <span class="text-limeGreen font-bold">
-                  تومان 149,000
-                </span>
+              <div class="flex flex-row justify-between text-sm md:text-base">
+                <span>تیگو 8</span>
+                <span class="text-bgRed font-bold">تومان 149,000</span>
               </div>
-
             </div>
-
           </div>
 
-          <div data-aos="fade-left" class="productCard bg-lightGray rounded-xl w-full md:w-1/4 flex flex-col gap-1 shadow-xl">
-            <!-- Card Image -->
-            <div class="w-full max-h-[20vh] overflow-hidden rounded-tr-xl rounded-tl-xl  shadow-md">
-              <img src="../assets/images/products/p1.jpg" alt="">
+          <div data-aos="fade-left"
+            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
+          >
+            <div class="w-full h-40 overflow-hidden">
+              <img
+                src="../assets/images/products/p1.jpg"
+                alt="چراغ تیگو 8"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <!-- Card Details -->
-            <div class="p-3 flex flex-col gap-3 ">
-              <!-- Product Name -->
-              <h3 class="font-semibold text-xl cursor-pointer"> 
+            <div class="p-4 flex flex-col gap-2">
+              <h3
+                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
+              >
                 چراغ تیگو 8
               </h3>
-
-              <span class="text-gray-900">
+              <span class="text-gray-700 text-sm text-center">
                 کد کالا : BP-8100
               </span>
-              <!-- product price -->
-              <div class="flex flex-row justify-between">
-                <span>
-                  تیگو 8
-                </span>
-                <span class="text-limeGreen font-bold">
-                  تومان 149,000
-                </span>
+              <div class="flex flex-row justify-between text-sm md:text-base">
+                <span>تیگو 8</span>
+                <span class="text-bgRed font-bold">تومان 149,000</span>
               </div>
-
             </div>
-
           </div>
 
-          <div data-aos="fade-left" class="productCard bg-lightGray rounded-xl w-full md:w-1/4 flex flex-col gap-1 shadow-xl">
-            <!-- Card Image -->
-            <div class="w-full max-h-[20vh] overflow-hidden rounded-tr-xl rounded-tl-xl  shadow-md">
-              <img src="../assets/images/products/p1.jpg" alt="">
+          <div data-aos="fade-left"
+            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
+          >
+            <div class="w-full h-40 overflow-hidden">
+              <img
+                src="../assets/images/products/p1.jpg"
+                alt="چراغ تیگو 8"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <!-- Card Details -->
-            <div class="p-3 flex flex-col gap-3 ">
-              <!-- Product Name -->
-              <h3 class="font-semibold text-xl cursor-pointer"> 
+            <div class="p-4 flex flex-col gap-2">
+              <h3
+                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
+              >
                 چراغ تیگو 8
               </h3>
-
-              <span class="text-gray-900">
+              <span class="text-gray-700 text-sm text-center">
                 کد کالا : BP-8100
               </span>
-              <!-- product price -->
-              <div class="flex flex-row justify-between">
-                <span>
-                  تیگو 8
-                </span>
-                <span class="text-limeGreen font-bold">
-                  تومان 149,000
-                </span>
+              <div class="flex flex-row justify-between text-sm md:text-base">
+                <span>تیگو 8</span>
+                <span class="text-bgRed font-bold">تومان 149,000</span>
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-      <section id="toturialSec" class="py-12 p-16 flex flex-col gap-8">
-        <h3 class="text-steelGray font-bold text-3xl text-center border-b pb-3">
-          مطالب آموزشی 
+      <section id="toturialSec" class="py-12 px-4 md:px-16 flex flex-col gap-8">
+        <!-- Section Title -->
+        <h3
+          class="text-steelGray font-bold text-2xl md:text-3xl text-center border-b pb-3"
+        >
+          مطالب آموزشی
         </h3>
 
-        <div id="toturialCardContainer" class="w-full flex flex-row px-10 py-6 bg-lightGray rounded-xl items-center justify-center gap-5 group duration-150 relative">
-
-          <div class="bg-black/20 w-7 h-7 text-center rounded-full p-1 cursor-pointer hidden group-hover:block duration-300 absolute top-1/2 right-2 transform -translate-y-1/2">  
-            <i class="fas fa-angle-right text-xl text-gray-700 hover:text-black"></i>  
-          </div>  
-          
-          <!-- Toturial Card -->
-          <div data-aos="fade-right" class="toturialCard w-1/5 border bg-white shadow-xl rounded-lg flex flex-col gap-1">
-            <!-- Card Tumbnail -->
-             <div class="w-full max-h-[20vh] overflow-hidden rounded-tl-lg rounded-tr-lg p-3">
-              <img src="../assets/images/cheryHero2.jpg" alt="" class="w-full rounded-xl">
-             </div>
-             <!-- Card Deatils -->
-              <div class="p-3">
-                <span class="text-gray-800 cursor-pointer hover:text-black duration-150">
+        <!-- Slider Container -->
+        <div
+          id="toturialSlider"
+          class="relative overflow-hidden w-full bg-lightGray rounded-xl"
+        >
+          <!-- Slider Wrapper -->
+          <div
+            id="toturialCardContainer"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Tutorial Card -->
+            <div
+              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
+            >
+              <!-- Card Thumbnail -->
+              <div class="w-full h-40 overflow-hidden rounded-t-lg">
+                <img
+                  src="../assets/images/cheryHero2.jpg"
+                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- Card Details -->
+              <div class="p-4">
+                <span
+                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
+                >
                   روغن ماشین بهتره که هر چند وقت یکبار عوض شود
                 </span>
               </div>
+            </div>
 
-
-          </div>
-
-          <!-- Toturial Card -->
-          <div data-aos="fade-right" class="toturialCard w-1/5 border bg-white shadow-xl rounded-lg flex flex-col gap-1">
-            <!-- Card Tumbnail -->
-             <div class="w-full max-h-[20vh] overflow-hidden rounded-tl-lg rounded-tr-lg p-3">
-              <img src="../assets/images/cheryHero2.jpg" alt="" class="w-full rounded-xl">
-             </div>
-             <!-- Card Deatils -->
-              <div class="p-3">
-                <span class="text-gray-800 cursor-pointer hover:text-black duration-150">
+            <!-- Repeat Tutorial Cards -->
+            <div
+              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
+            >
+              <div class="w-full h-40 overflow-hidden rounded-t-lg">
+                <img
+                  src="../assets/images/cheryHero2.jpg"
+                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <span
+                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
+                >
                   روغن ماشین بهتره که هر چند وقت یکبار عوض شود
                 </span>
               </div>
+            </div>
 
-
-          </div>
-
-          <!-- Toturial Card -->
-          <div data-aos="fade-right" class="toturialCard w-1/5 border bg-white shadow-xl rounded-lg flex flex-col gap-1">
-            <!-- Card Tumbnail -->
-             <div class="w-full max-h-[20vh] overflow-hidden rounded-tl-lg rounded-tr-lg p-3">
-              <img src="../assets/images/cheryHero2.jpg" alt="" class="w-full rounded-xl">
-             </div>
-             <!-- Card Deatils -->
-              <div class="p-3">
-                <span class="text-gray-800 cursor-pointer hover:text-black duration-150">
+            <!-- Repeat Tutorial Cards -->
+            <div
+              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
+            >
+              <div class="w-full h-40 overflow-hidden rounded-t-lg">
+                <img
+                  src="../assets/images/cheryHero2.jpg"
+                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <span
+                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
+                >
                   روغن ماشین بهتره که هر چند وقت یکبار عوض شود
                 </span>
               </div>
+            </div>
 
-
-          </div>
-
-          <!-- Toturial Card -->
-          <div data-aos="fade-right" class="toturialCard w-1/5 border bg-white shadow-xl rounded-lg flex flex-col gap-1">
-            <!-- Card Tumbnail -->
-             <div class="w-full max-h-[20vh] overflow-hidden rounded-tl-lg rounded-tr-lg p-3">
-              <img src="../assets/images/cheryHero2.jpg" alt="" class="w-full rounded-xl">
-             </div>
-             <!-- Card Deatils -->
-              <div class="p-3">
-                <span class="text-gray-800 cursor-pointer hover:text-black duration-150">
+            <!-- Repeat Tutorial Cards -->
+            <div
+              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
+            >
+              <div class="w-full h-40 overflow-hidden rounded-t-lg">
+                <img
+                  src="../assets/images/cheryHero2.jpg"
+                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <span
+                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
+                >
                   روغن ماشین بهتره که هر چند وقت یکبار عوض شود
                 </span>
               </div>
-
-
+            </div>
           </div>
 
-          <!-- Toturial Card -->
-          <div data-aos="fade-right" class="toturialCard w-1/5 border bg-white shadow-xl rounded-lg flex flex-col gap-1">
-            <!-- Card Tumbnail -->
-             <div class="w-full max-h-[20vh] overflow-hidden rounded-tl-lg rounded-tr-lg p-3">
-              <img src="../assets/images/cheryHero2.jpg" alt="" class="w-full rounded-xl">
-             </div>
-             <!-- Card Deatils -->
-              <div class="p-3">
-                <span class="text-gray-800 cursor-pointer hover:text-black duration-150">
-                  روغن ماشین بهتره که هر چند وقت یکبار عوض شود
-                </span>
-              </div>
-
-
+          <!-- Slider Controls -->
+          <div
+            class="absolute top-1/2 transform -translate-y-1/2 left-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"
+            id="prevBtn"
+          >
+            <i class="fas fa-angle-left text-white text-lg"></i>
           </div>
-
-          <div class="bg-black/20 w-7 h-7 text-center rounded-full p-1 cursor-pointer hidden group-hover:block duration-300 absolute top-1/2 left-2 transform -translate-y-1/2">  
-            <i class="fas fa-angle-left text-xl text-gray-700 hover:text-black"></i>  
-          </div>  
-
+          <div
+            class="absolute top-1/2 transform -translate-y-1/2 right-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"
+            id="nextBtn"
+          >
+            <i class="fas fa-angle-right text-white text-lg"></i>
+          </div>
         </div>
-
-        
-
       </section>
+
       <!-- section for why choose us -->
-      <section data-aos="fade-up" class="bg-steelGray py-8 px-4">
-        <h3 class="text-center font-bold text-lightGray text-4xl">
+      <section
+        data-aos="fade-up"
+        class="bg-steelGray py-12 px-4 text-lightGray flex flex-col items-center"
+      >
+        <!-- Section Title -->
+        <h3 class="text-center font-bold text-3xl md:text-4xl mb-8">
           تماس با ما
         </h3>
-        <div class="w-[90%] text-center mx-auto">
-          <!-- Contact US Box -->
-          <div class="bg-gray-300 px-8 py-8 rounded-xl flex flex-col items-center justify-center gap-6 w-1/3 mx-auto mt-10">
-            <!-- <i class="fa-solid fa-phone"></i>  Icon e phone-->
-            <div class="flex flex-row gap-2 items-center">
-                <img
-                  class="w-24 h-24"
-                  src="../assets/images/svg/chery1.svg"
-                  alt="Company Logo"
-                />
-              <h4 class="font-bold text-zinc-800 text-4xl">لوازم یدکی ناظمی</h4>
-            </div>
-            <div class="text-center text-steelGray duration-150 text-lg">
-              شماره تماس :
-              <a href="tel:0912-123-4567" class="hover:text-black duration-150">09393591452</a>
-            </div>
 
-            <div class="text-center text-steelGray duration-150 text-lg">
-              آدرس : 
-              <span>
-                خیابان ولیعصر، پلام 123 ، طبقه 4 ، واحد 5
-              </span>
-            </div>
-
-            <button type="button" class="rounded-lg bg-bgRed hover:bg-darkerBgRed px-6 py-2 duration-300 hover:px-8">
-              <a href="tel:0912-123-4567" class="text-lightGray hover:text-white">تماس</a>
-            </button>
-
+        <!-- Contact Us Box -->
+        <div
+          class="bg-gray-300 px-8 py-8 rounded-2xl shadow-lg flex flex-col items-center gap-6 w-full max-w-lg mx-auto"
+        >
+          <!-- Logo and Name -->
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <img
+              class="w-20 h-20 object-contain"
+              src="../assets/images/svg/chery1.svg"
+              alt="لوگوی شرکت لوازم یدکی ناظمی"
+            />
+            <h4 class="font-bold text-gray-800 text-xl md:text-2xl text-center">
+              لوازم یدکی ناظمی
+            </h4>
           </div>
 
-          <!-- Why Us Boxes -->
-          <div class=" flex flex-row gap-8 items-center justify-center mt-12">
-            
-            <div class="service-box flex flex-row gap-3 items-center">  
-              <div class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full text-center">
-                <i class="fas fa-box text-4xl"></i>  
-              </div>
-              <span class="text-gray-200">ارسال در سریع ترین زمان</span>  
-           </div>  
+          <!-- Phone -->
+          <address class="not-italic text-lg text-center text-gray-700">
+            شماره تماس:
+            <a
+              href="tel:0912-123-4567"
+              class="hover:text-black duration-150 underline"
+            >
+              09393591452
+            </a>
+          </address>
 
-           <div class="service-box flex flex-row gap-3 items-center">  
-              <div class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full text-center">
-                <i class="fas fa-globe text-4xl"></i> 
-              </div> 
-              <span class="text-gray-200">تنوع بالا محصولات</span>  
-           </div>  
+          <!-- Address -->
+          <p class="text-center text-lg text-gray-700">
+            آدرس:
+            <span> خیابان ولیعصر، پلام 123 ، طبقه 4 ، واحد 5 </span>
+          </p>
 
-           <div class="service-box flex flex-row gap-3 items-center">  
-              <div class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full text-center">
-                <i class="fas fa-headset text-4xl"></i>  
-              </div>
-              <span class="text-gray-200">مشاوره و پشتیبانی رایگان</span>  
-           </div> 
+          <!-- Call Button -->
+          <button
+            type="button"
+            class="rounded-lg bg-red-500 hover:bg-red-600 px-6 py-3 text-lg font-bold text-white shadow-lg hover:shadow-xl transition-all"
+          >
+            <a href="tel:0912-123-4567">تماس</a>
+          </button>
+        </div>
 
-           <div class="service-box flex flex-row gap-3 items-center">  
-              <div class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full text-center">
-                <i class="fa-solid fa-check-to-slot text-4xl"></i> 
-              </div>
-              <span class="text-gray-200">ضمانت کیفیت و اصالت کالا</span>  
-           </div>  
-
+        <!-- Why Us Section -->
+        <div
+          class="flex flex-col md:flex-row gap-6 mt-12 items-center justify-center text-center"
+        >
+          <!-- Fast Shipping -->
+          <div class="service-box flex flex-col items-center gap-3">
+            <div
+              class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full flex items-center justify-center shadow-lg"
+            >
+              <i class="fas fa-box text-3xl"></i>
+            </div>
+            <span class="text-gray-200 text-sm sm:text-base">
+              ارسال در سریع‌ترین زمان
+            </span>
           </div>
 
-         
+          <!-- Product Variety -->
+          <div class="service-box flex flex-col items-center gap-3">
+            <div
+              class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full flex items-center justify-center shadow-lg"
+            >
+              <i class="fas fa-globe text-3xl"></i>
+            </div>
+            <span class="text-gray-200 text-sm sm:text-base">
+              تنوع بالا محصولات
+            </span>
+          </div>
 
+          <!-- Free Support -->
+          <div class="service-box flex flex-col items-center gap-3">
+            <div
+              class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full flex items-center justify-center shadow-lg"
+            >
+              <i class="fas fa-headset text-3xl"></i>
+            </div>
+            <span class="text-gray-200 text-sm sm:text-base">
+              مشاوره و پشتیبانی رایگان
+            </span>
+          </div>
+
+          <!-- Product Guarantee -->
+          <div class="service-box flex flex-col items-center gap-3">
+            <div
+              class="bg-gray-300 text-steelGray w-20 h-20 p-5 rounded-full flex items-center justify-center shadow-lg"
+            >
+              <i class="fa-solid fa-check-to-slot text-3xl"></i>
+            </div>
+            <span class="text-gray-200 text-sm sm:text-base">
+              ضمانت کیفیت و اصالت کالا
+            </span>
+          </div>
         </div>
       </section>
-
     </main>
 
     <footer class="bg-lightGray text-gray-800">
@@ -626,10 +675,12 @@
           <div>
             <h3 class="text-xl font-bold mb-4">درباره ما</h3>
             <p class="text-sm opacity-80 leading-6">
-              ما  مفتخر هستیم که بهترین قطعات یدکی خودروهای چینی را با استانداردهای جهانی، کیفیت برتر و خدمات حرفه‌ای ارائه دهیم. هدف ما همکاری پایدار و ایجاد ارزش برای مشتریان است
+              ما مفتخر هستیم که بهترین قطعات یدکی خودروهای چینی را با
+              استانداردهای جهانی، کیفیت برتر و خدمات حرفه‌ای ارائه دهیم. هدف ما
+              همکاری پایدار و ایجاد ارزش برای مشتریان است
             </p>
           </div>
-    
+
           <!-- Quick Links -->
           <div>
             <h3 class="text-xl font-bold mb-4">لینک‌های سریع</h3>
@@ -648,37 +699,75 @@
               </li>
             </ul>
           </div>
-    
+
           <!-- Contact Section -->
           <div>
             <h3 class="text-xl font-bold mb-4">تماس با ما</h3>
             <ul class="space-y-3 text-sm">
               <li class="flex items-center space-x-2 rtl:space-x-reverse">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26c.22.15.48.15.7 0L21 8M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10" />
+                <svg
+                  class="w-5 h-5 text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26c.22.15.48.15.7 0L21 8M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10"
+                  />
                 </svg>
                 <span>info@example.com</span>
               </li>
               <li class="flex items-center space-x-2 rtl:space-x-reverse">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-3-3h-4a3 3 0 00-3 3v2h5zm-8 0h5v-2a3 3 0 00-3-3H7a3 3 0 00-3 3v2h5zM16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                <svg
+                  class="w-5 h-5 text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-3-3h-4a3 3 0 00-3 3v2h5zm-8 0h5v-2a3 3 0 00-3-3H7a3 3 0 00-3 3v2h5zM16 7a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
                 </svg>
-                <a href="tel:0912-123-4567" class="hover:text-black duration-150">09393591452</a>
+                <a
+                  href="tel:0912-123-4567"
+                  class="hover:text-black duration-150"
+                  >09393591452</a
+                >
               </li>
               <li class="flex items-center space-x-2 rtl:space-x-reverse">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 3.5L3.5 7.5M3.5 16.5l4 4m4-4l4 4m-4-4l4-4m0 0L3.5 3.5" />
+                <svg
+                  class="w-5 h-5 text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7.5 3.5L3.5 7.5M3.5 16.5l4 4m4-4l4 4m-4-4l4-4m0 0L3.5 3.5"
+                  />
                 </svg>
                 <span>تهران، خیابان انقلاب</span>
               </li>
             </ul>
           </div>
-    
+
           <!-- Newsletter Section -->
           <div>
             <h3 class="text-xl font-bold mb-4">خبرنامه</h3>
             <p class="text-sm opacity-80 leading-6 mb-4">
-              برای دریافت جدیدترین اطلاعات و پیشنهادات ما، ایمیل خود را وارد کنید.
+              برای دریافت جدیدترین اطلاعات و پیشنهادات ما، ایمیل خود را وارد
+              کنید.
             </p>
             <div class="flex items-center space-x-2 rtl:space-x-reverse">
               <input
@@ -686,27 +775,35 @@
                 placeholder="ایمیل شما"
                 class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary duration-300"
               />
-              <button class="bg-bgRed text-white px-4 py-2 rounded-lg shadow-md hover:bg-darkerBgRed transition">
+              <button
+                class="bg-bgRed text-white px-4 py-2 rounded-lg shadow-md hover:bg-darkerBgRed transition"
+              >
                 ارسال
               </button>
             </div>
           </div>
         </div>
       </div>
-    
+
       <!-- Bottom section -->
       <div class="border-t border-gray-400 py-4">
-        <div class="container mx-auto flex items-center justify-between text-sm">
+        <div
+          class="container mx-auto flex items-center justify-between text-sm"
+        >
           <p>کلیه حقوق محفوظ است © 2025</p>
           <ul class="flex space-x-4 rtl:space-x-reverse">
-            <li><a href="#" class="hover:text-primary transition">حریم خصوصی</a></li>
-            <li><a href="#" class="hover:text-primary transition">شرایط استفاده</a></li>
+            <li>
+              <a href="#" class="hover:text-primary transition">حریم خصوصی</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition"
+                >شرایط استفاده</a
+              >
+            </li>
           </ul>
         </div>
       </div>
     </footer>
-    
-    
 
     <script
       src="https://kit.fontawesome.com/febee2a18d.js"
@@ -716,5 +813,14 @@
     <script>
       AOS.init();
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": ["خانه", "محصولات", "دسته بندی", "آموزش", "ارتباط با ما"],
+        "url": ["/home", "/products", "/categories", "/tutorials", "/contact"]
+      }
+    </script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,26 @@
+[
+    {
+        productName {
+            carCategory , 
+            productImage , 
+            productCode,
+            productPrice,
+            uploadDate,
+            productId,
+        }
+    }
+]
+
+
+carCategory [
+    {
+        productName {
+            carCategory , 
+            productImage , 
+            productCode,
+            productPrice,
+            uploadDate,
+            productId,
+        }
+    }
+]
