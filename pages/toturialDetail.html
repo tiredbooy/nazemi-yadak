@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="آموزش‌های تخصصی درباره قطعات چینی. راهنمای گام‌به‌گام برای درک و استفاده موثر از قطعات چینی."
+    />
+    <meta
+      name="keywords"
+      content="قطعات چینی, آموزش, راهنما, DIY, قطعات خودرو"
+    />
+    <meta name="author" content="نام وب‌سایت شما" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>محصولات</title>
+    <title>جزئیات آموزش - نام وب‌سایت شما</title>
   </head>
-  <body>
-    <!-- Site Header -->
+  <body class="bg-lightGray text-steelGray">
+    <!-- هدر -->
     <header>
       <nav
         class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
@@ -94,14 +102,15 @@
 
           <!-- User Icon -->
           <!-- <i
-            class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
-          ></i> -->
+          class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
+        ></i> -->
         </div>
       </nav>
     </header>
 
-    <main>
-      <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- محتوای اصلی -->
+    <main class="bg-gray-50 py-12">
+        <!-- ---------------------------------------------------------------------------------------------------- -->
         <!-- Menu Modal -->
         <div
           id="menuModal"
@@ -160,156 +169,116 @@
         </div>
         <!-- ---------------------------------------------------------------------------------------------------- -->
 
-      <div class="w-[80%] mx-auto p-5 flex flex-col lg:flex-row gap-4">
-        <!-- Filter Right Section -->
-        <div id="filterSetting" class="border rounded-lg w-full lg:w-[20%] flex flex-col px-2 py-3 hidden lg:block transition-all duration-300 ease-in-out transform"> 
-          <h4 class="text-lg font-bold border-b text-steelGray">
-            دسته ی محصولات
-          </h4>
-          <!-- Car Filter -->
-          <ul class="flex flex-col gap-3 mt-3">
-            <li
-              class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
-            >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
-              <div
-                class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
-              >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
-              </div>
-            </li>
 
-            <li
-              class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
-            >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
-              <div
-                class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
-              >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
-              </div>
-            </li>
+      <div class="container mx-auto px-4">
+        <!-- Breadcrumb -->
+        <nav class="mb-6">
+          <ol class="flex space-x-2 text-sm text-gray-600">
+            <li><a href="#" class="hover:text-crimsonRed">خانه</a></li>
+            <li>/</li>
+            <li><a href="#" class="hover:text-crimsonRed">آموزش‌ها</a></li>
+            <li>/</li>
+            <li class="text-gray-900">عنوان آموزش</li>
+          </ol>
+        </nav>
 
-            <li
-              class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
-            >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
-              <div
-                class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
-              >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
-              </div>
-            </li>
+        <!-- Tutorial Title -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-6">عنوان آموزش</h1>
 
-            <li
-              class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
-            >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
-              <div
-                class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
-              >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
-              </div>
-            </li>
-
-            <li
-              class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
-            >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
-              <div
-                class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
-              >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Product Section -->
-        <div class="w-full flex flex-col gap-2 px-4 py-3">
-          <!-- Top of the product container -->
-          <div class="flex flex-row justify-between border-b pb-1 items-center">
-            <div class="flex flex-row gap-5 items-center">
-              <i id="openFilterSetting" class="fas fa-sliders-h text-gray-700 hover:text-black block lg:!hidden cursor-pointer"></i>
-              <span class="font-bold text-gray-700 hidden md:!block lg:hidden"> تمام محصولات </span>
-            </div>
-            <!-- Sort By Filter -->
-            <div class="flex flex-row gap-1 items-center">
-              <span class="text-gray-600 text-sm"> مرتب سازی براساس </span>
-              <select
-                class="rounded px-2 py-1 outline-none cursor-pointer text-gray-800"
-                name=""
-                id=""
-              >
-                <option class="" value="">جدید ترین</option>
-                <option value="">ارزان ترین</option>
-                <option value="">گران ترین</option>
-                <option value="">پرفروش ترین</option>
-              </select>
-            </div>
-          </div>
-
-          <div
-            id="productCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-lg p-4">
-            <!-- Product Card -->
-
-            <article
-              data-aos="fade-left"
-              class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
-              itemscope
-              itemtype="https://schema.org/Product"
-            >
-              <!-- Card Image -->
-              <div class="w-full h-40 overflow-hidden">
-                <img
-                  src="../assets/images/products/p1.jpg"
-                  alt="چراغ تیگو 8 - چراغ مخصوص خودرو تیگو 8"
-                  class="w-full h-full object-cover"
-                  itemprop="image"
-                />
-              </div>
-              <!-- Card Details -->
-              <div class="p-4 flex flex-col gap-2">
-                <!-- Product Name -->
-                <h3
-                  class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
-                  itemprop="name"
-                >
-                  چراغ تیگو 8
-                </h3>
-                <span class="text-gray-700 text-sm text-center" itemprop="sku">
-                  کد کالا : BP-8100
-                </span>
-                <!-- Product Price -->
-                <div
-                  class="flex flex-row justify-between text-sm md:text-base"
-                  itemprop="offers"
-                  itemscope
-                  itemtype="https://schema.org/Offer"
-                >
-                  <span itemprop="brand">تیگو 8</span>
-                  <span
-                    class="text-bgRed font-bold"
-                    itemprop="priceCurrency"
-                    content="IRR"
-                  >
-                    <meta itemprop="price" content="149000" />
-                    تومان 149,000
-                  </span>
-                </div>
-              </div>
-            </article>
-            <!-- Repeat the Product Card structure for more products -->
-
-
-
-
-          </div>
-
+        <!-- Tutorial Meta (Author, Date, etc.) -->
+        <div class="flex items-center space-x-4 text-gray-600 mb-8">
+          <span>نویسنده: علی محمدی</span>
+          <span>•</span>
+          <span>تاریخ انتشار: ۱۰ مهر ۱۴۰۲</span>
         </div>
 
+        <!-- Tutorial Image -->
+        <div class="mb-8">
+          <img
+            src="/assets/images/cheryHero2.jpg"
+            alt="تصویر آموزش"
+            class="w-full rounded-lg shadow-lg"
+          />
+        </div>
+
+        <!-- Tutorial Content -->
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+            توضیحات کامل
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            اینجا توضیحات کامل آموزش قرار می‌گیرد. شما می‌توانید مراحل را به
+            صورت گام‌به‌گام توضیح دهید و نکات مهم را برجسته کنید. این متن نمونه
+            است و می‌توانید آن را با محتوای واقعی جایگزین کنید.
+          </p>
+
+          <!-- Steps -->
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4 gap-2">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-crimsonRed text-white rounded-full flex items-center justify-center"
+              >
+                ۱
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">مرحله اول</h3>
+                <p class="text-gray-700 mt-2">
+                  توضیحات مربوط به مرحله اول اینجا قرار می‌گیرد. این متن نمونه
+                  است و می‌توانید آن را با محتوای واقعی جایگزین کنید.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 gap-2">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-crimsonRed text-white rounded-full flex items-center justify-center"
+              >
+                ۲
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">مرحله دوم</h3>
+                <p class="text-gray-700 mt-2">
+                  توضیحات مربوط به مرحله دوم اینجا قرار می‌گیرد. این متن نمونه
+                  است و می‌توانید آن را با محتوای واقعی جایگزین کنید.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 gap-2">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-crimsonRed text-white rounded-full flex items-center justify-center"
+              >
+                ۳
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">مرحله سوم</h3>
+                <p class="text-gray-700 mt-2">
+                  توضیحات مربوط به مرحله سوم اینجا قرار می‌گیرد. این متن نمونه
+                  است و می‌توانید آن را با محتوای واقعی جایگزین کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="mt-8 flex gap-4 callToActionBtns">
+          <a
+            href="../pages/products.html"
+            class="bg-crimsonRed text-white px-6 py-3 rounded-lg hover:bg-darkerBgRed transition duration-300"
+          >
+            خرید قطعات
+          </a>
+          <a
+            href="../pages/toturial.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+          >
+            مشاهده آموزش‌های بیشتر
+          </a>
+        </div>
       </div>
     </main>
-
+    <!-- فوتر -->
     <footer class="bg-lightGray text-gray-800">
       <!-- Main footer content -->
       <div class="container mx-auto py-16 px-6">
@@ -447,16 +416,24 @@
         </div>
       </div>
     </footer>
+    
+
+    <!-- <script>
+        let btns = document.querySelectorAll('.callToActionBtns')
+        btns.forEach(a => {
+            a.addEventListener('click',(e) => {
+                e.preventDefault()
+                if(e.target.textContent == 'خرید قطعات'){
+                    window
+                }
+            })
+        })
+    </script> -->
 
     <script
       src="https://kit.fontawesome.com/febee2a18d.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-     <script src="../assets/scripts/main.js"></script>
-     <script src="../assets/scripts/products.js"></script>
+    <script src="../assets/scripts/main.js"></script>
   </body>
 </html>

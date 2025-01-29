@@ -102,10 +102,8 @@
 
     <main>
       <!-- Hero Section -->
-      <section
-        id="heroSection"
-        class="relative w-full h-[95vh] overflow-hidden bg-lightGray"
-      >
+      
+      <section id="heroSection" class="relative w-full h-[95vh] overflow-hidden bg-lightGray">
         <!-- Slide Content -->
         <div class="slides transition-transform duration-500 ease-in-out">
           <!-- Dynamic slides will be injected here -->
@@ -505,122 +503,213 @@
         </div>
       </section>
 
-      <section id="toturialSec" class="py-12 px-4 md:px-16 flex flex-col gap-8">
-        <!-- Section Title -->
-        <h3
-          class="text-steelGray font-bold text-2xl md:text-3xl text-center border-b pb-3"
-        >
-          مطالب آموزشی
-        </h3>
+      <section id="tutorialSection" class="py-12 px-4 md:px-16" aria-labelledby="tutorial-heading">  
+        <h2   
+            id="tutorial-heading"   
+            class="text-steelGray font-bold text-2xl md:text-3xl text-center border-b pb-3 mb-8"  
+        >  
+            مطالب آموزشی  
+        </h2>  
+    
+        <div   
+            id="tutorialSlider"   
+            class="relative overflow-hidden w-full bg-lightGray rounded-xl"  
+            role="region"   
+            aria-roledescription="توضیحات اسلایدر"  
+        >  
+            <div   
+                id="tutorialCardContainer"   
+                class="flex transition-transform duration-500 ease-in-out"  
+                role="group"  
+            >  
+                <!-- Tutorial Cards -->  
+                <article   
+                    class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+                >  
+                    <a href="#" class="block">  
+                        <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                            <img  
+                                src="../assets/images/cheryHero2.jpg"  
+                                alt="روغن ماشین و زمان تعویض"  
+                                class="w-full h-full object-cover"  
+                                loading="lazy"  
+                            />  
+                        </div>  
+                        <div class="p-4">  
+                            <h3 class="text-gray-800 hover:text-black duration-150">  
+                                روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                            </h3>  
+                        </div>  
+                    </a>  
+                </article>  
 
-        <!-- Slider Container -->
-        <div
-          id="toturialSlider"
-          class="relative overflow-hidden w-full bg-lightGray rounded-xl"
-        >
-          <!-- Slider Wrapper -->
-          <div
-            id="toturialCardContainer"
-            class="flex transition-transform duration-500 ease-in-out p-5"
-          >
-            <!-- Tutorial Card -->
-            <div
-              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
-            >
-              <!-- Card Thumbnail -->
-              <div class="w-full h-40 overflow-hidden rounded-t-lg">
-                <img
-                  src="../assets/images/cheryHero2.jpg"
-                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <!-- Card Details -->
-              <div class="p-4">
-                <span
-                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
-                >
-                  روغن ماشین بهتره که هر چند وقت یکبار عوض شود
-                </span>
-              </div>
-            </div>
+                 <!-- Tutorial Cards -->  
+                 <article   
+                 class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+             >  
+                 <a href="#" class="block">  
+                     <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                         <img  
+                             src="../assets/images/cheryHero2.jpg"  
+                             alt="روغن ماشین و زمان تعویض"  
+                             class="w-full h-full object-cover"  
+                             loading="lazy"  
+                         />  
+                     </div>  
+                     <div class="p-4">  
+                         <h3 class="text-gray-800 hover:text-black duration-150">  
+                             روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                         </h3>  
+                     </div>  
+                 </a>  
+                </article> 
+                
+                <!-- Repeat similar article cards -->  
+                <!-- Tutorial Cards -->  
+                <article   
+                class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+            >  
+                <a href="#" class="block">  
+                    <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                        <img  
+                            src="../assets/images/cheryHero2.jpg"  
+                            alt="روغن ماشین و زمان تعویض"  
+                            class="w-full h-full object-cover"  
+                            loading="lazy"  
+                        />  
+                    </div>  
+                    <div class="p-4">  
+                        <h3 class="text-gray-800 hover:text-black duration-150">  
+                            روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                        </h3>  
+                    </div>  
+                </a>  
+               </article> 
+               
+               <!-- Tutorial Cards -->  
+               <article   
+               class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+           >  
+               <a href="#" class="block">  
+                   <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                       <img  
+                           src="../assets/images/cheryHero2.jpg"  
+                           alt="روغن ماشین و زمان تعویض"  
+                           class="w-full h-full object-cover"  
+                           loading="lazy"  
+                       />  
+                   </div>  
+                   <div class="p-4">  
+                       <h3 class="text-gray-800 hover:text-black duration-150">  
+                           روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                       </h3>  
+                   </div>  
+               </a>  
+              </article> 
+              
+              <!-- Tutorial Cards -->  
+              <article   
+              class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+          >  
+              <a href="#" class="block">  
+                  <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                      <img  
+                          src="../assets/images/cheryHero2.jpg"  
+                          alt="روغن ماشین و زمان تعویض"  
+                          class="w-full h-full object-cover"  
+                          loading="lazy"  
+                      />  
+                  </div>  
+                  <div class="p-4">  
+                      <h3 class="text-gray-800 hover:text-black duration-150">  
+                          روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                      </h3>  
+                  </div>  
+              </a>  
+             </article> 
+             
+             <!-- Tutorial Cards -->  
+             <article   
+             class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+         >  
+             <a href="#" class="block">  
+                 <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                     <img  
+                         src="../assets/images/cheryHero2.jpg"  
+                         alt="روغن ماشین و زمان تعویض"  
+                         class="w-full h-full object-cover"  
+                         loading="lazy"  
+                     />  
+                 </div>  
+                 <div class="p-4">  
+                     <h3 class="text-gray-800 hover:text-black duration-150">  
+                         روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                     </h3>  
+                 </div>  
+             </a>  
+            </article> 
+            
+            <!-- Tutorial Cards -->  
+            <article   
+            class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+        >  
+            <a href="#" class="block">  
+                <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                    <img  
+                        src="../assets/images/cheryHero2.jpg"  
+                        alt="روغن ماشین و زمان تعویض"  
+                        class="w-full h-full object-cover"  
+                        loading="lazy"  
+                    />  
+                </div>  
+                <div class="p-4">  
+                    <h3 class="text-gray-800 hover:text-black duration-150">  
+                        روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                    </h3>  
+                </div>  
+            </a>  
+           </article> 
+           
+           <!-- Tutorial Cards -->  
+           <article   
+           class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
+       >  
+           <a href="#" class="block">  
+               <div class="w-full h-40 overflow-hidden rounded-t-lg">  
+                   <img  
+                       src="../assets/images/cheryHero2.jpg"  
+                       alt="روغن ماشین و زمان تعویض"  
+                       class="w-full h-full object-cover"  
+                       loading="lazy"  
+                   />  
+               </div>  
+               <div class="p-4">  
+                   <h3 class="text-gray-800 hover:text-black duration-150">  
+                       روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
+                   </h3>  
+               </div>  
+           </a>  
+          </article> 
+          
 
-            <!-- Repeat Tutorial Cards -->
-            <div
-              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
-            >
-              <div class="w-full h-40 overflow-hidden rounded-t-lg">
-                <img
-                  src="../assets/images/cheryHero2.jpg"
-                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-4">
-                <span
-                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
-                >
-                  روغن ماشین بهتره که هر چند وقت یکبار عوض شود
-                </span>
-              </div>
-            </div>
-
-            <!-- Repeat Tutorial Cards -->
-            <div
-              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
-            >
-              <div class="w-full h-40 overflow-hidden rounded-t-lg">
-                <img
-                  src="../assets/images/cheryHero2.jpg"
-                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-4">
-                <span
-                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
-                >
-                  روغن ماشین بهتره که هر چند وقت یکبار عوض شود
-                </span>
-              </div>
-            </div>
-
-            <!-- Repeat Tutorial Cards -->
-            <div
-              class="toturialCard flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg flex flex-col gap-2 mx-2"
-            >
-              <div class="w-full h-40 overflow-hidden rounded-t-lg">
-                <img
-                  src="../assets/images/cheryHero2.jpg"
-                  alt="روغن ماشین بهتره که هر چند وقت یکبار عوض شود"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-4">
-                <span
-                  class="text-gray-800 cursor-pointer hover:text-black duration-150"
-                >
-                  روغن ماشین بهتره که هر چند وقت یکبار عوض شود
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slider Controls -->
-          <div
-            class="absolute top-1/2 transform -translate-y-1/2 left-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"
-            id="prevBtn"
-          >
-            <i class="fas fa-angle-left text-white text-lg"></i>
-          </div>
-          <div
-            class="absolute top-1/2 transform -translate-y-1/2 right-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"
-            id="nextBtn"
-          >
-            <i class="fas fa-angle-right text-white text-lg"></i>
-          </div>
-        </div>
-      </section>
+            </div>  
+    
+            <button   
+                id="prevBtn"   
+                class="absolute top-1/2 transform -translate-y-1/2 left-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"  
+                aria-label="اسلاید قبلی"  
+            >  
+                <i class="fas fa-angle-left text-white text-lg" aria-hidden="true"></i>  
+            </button>  
+            <button   
+                id="nextBtn"   
+                class="absolute top-1/2 transform -translate-y-1/2 right-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"  
+                aria-label="اسلاید بعدی"  
+            >  
+                <i class="fas fa-angle-right text-white text-lg" aria-hidden="true"></i>  
+            </button>  
+        </div>  
+    </section>  
 
       <!-- section for contact Us -->
       <section

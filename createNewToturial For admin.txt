@@ -1,0 +1,47 @@
+<div class="p-8 bg-gray-50">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6">ایجاد آموزش جدید</h2>
+
+  <!-- Tutorial Title -->
+  <div class="mb-6">
+    <label for="title" class="block text-sm font-medium text-gray-700">عنوان آموزش</label>
+    <input type="text" id="title" name="title" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-crimsonRed focus:border-crimsonRed">
+  </div>
+
+  <!-- Tutorial Description -->
+  <div class="mb-6">
+    <label for="description" class="block text-sm font-medium text-gray-700">توضیحات کلی</label>
+    <textarea id="description" name="description" rows="3" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-crimsonRed focus:border-crimsonRed"></textarea>
+  </div>
+
+  <!-- Steps Section -->
+  <div id="steps-container">
+    <!-- Step 1 (Default Step) -->
+    <div class="step mb-6 bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">مرحله 1</h3>
+      <div class="mb-4">
+        <label for="step-title-1" class="block text-sm font-medium text-gray-700">عنوان مرحله</label>
+        <input type="text" id="step-title-1" name="step-title-1" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-crimsonRed focus:border-crimsonRed">
+      </div>
+      <div class="mb-4">
+        <label for="step-description-1" class="block text-sm font-medium text-gray-700">توضیحات مرحله</label>
+        <textarea id="step-description-1" name="step-description-1" rows="3" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-crimsonRed focus:border-crimsonRed"></textarea>
+      </div>
+      <div class="mb-4">
+        <label for="step-image-1" class="block text-sm font-medium text-gray-700">تصویر مرحله (اختیاری)</label>
+        <input type="file" id="step-image-1" name="step-image-1" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm">
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Step Button -->
+  <button type="button" id="add-step" class="bg-crimsonRed text-white px-4 py-2 rounded-lg hover:bg-darkerBgRed transition duration-300">
+    افزودن مرحله جدید
+  </button>
+
+  <!-- Submit Button -->
+  <div class="mt-8">
+    <button type="submit" class="bg-limeGreen text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+      ذخیره آموزش
+    </button>
+  </div>
+</div>
