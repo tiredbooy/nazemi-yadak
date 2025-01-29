@@ -1,29 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {  
-    const menuElement = document.getElementById('openMenu');  
-    const menuModal = document.getElementById('menuModal');  
+document.addEventListener('DOMContentLoaded', () => {
+    const menuElement = document.getElementById('openMenu');
+    const menuModal = document.getElementById('menuModal');
+    const openSearchBarBtn = document.getElementById('openSearchBarBtn');
 
-    // Show the modal when clicking on any part of openMenu  
-    menuElement.addEventListener('click', (e) => {  
-        e.stopPropagation(); // Prevent the click from bubbling to the body  
-        menuModal.classList.toggle('hidden');  
-    });  
+    // Toggle Modal
+    function toggleMenuModal() {
+        if(menuModal.classList.contains('activeModal')) {
+            menuModal.classList.add('closeModal');
+            menuModal.addEventListener('animationend', () => {
+                menuModal.classList.remove('activeModal', 'closeModal');
+            }, { once: true });
+        } else {
+            menuModal.classList.add('activeModal');
+            menuModal.classList.remove('closeModal');
+        }
+    }
 
-    function handleClickToCloseModal() {  
-        document.body.addEventListener('click', (e) => {  
-            // Check if modal is open and clicked outside of modal and openMenu  
-            if (!menuModal.classList.contains('hidden') &&   
-                !menuModal.contains(e.target) &&   
-                !menuElement.contains(e.target)) {   
-                menuModal.classList.add('hidden');  
-            }  
-        });  
+    // Event Listeners
+    menuElement.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenuModal();
+    });
 
-        // Prevent closing the modal on clicks inside the modal  
-        menuModal.addEventListener('click', (e) => {  
-            e.stopPropagation(); // Prevent the click from bubbling to body  
-        });  
-    }  
+    openSearchBarBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenuModal();
+    });
 
-    // Initialize click handling for closing the modal  
-    handleClickToCloseModal();  
-});  
+    // Close Modal on Outside Click
+    document.body.addEventListener('click', (e) => {
+        if (menuModal.classList.contains('activeModal') &&
+            !menuModal.contains(e.target) &&
+            !menuElement.contains(e.target) &&
+            !openSearchBarBtn.contains(e.target)) {
+            
+            menuModal.classList.add('closeModal');
+            menuModal.addEventListener('animationend', () => {
+                menuModal.classList.remove('activeModal', 'closeModal');
+            }, { once: true });
+        }
+    });
+
+    // Prevent Modal Close on Itself
+    menuModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});

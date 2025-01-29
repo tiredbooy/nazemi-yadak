@@ -75,7 +75,7 @@
           </li>
         </ul>
         <!-- Search Box for Larger Screens -->
-        <div class="relative hidden lg:block w-96">
+        <div id="navSearchBar" class="relative hidden lg:block w-96">
           <input
             class="w-full h-10 rounded-xl px-4 py-2 pr-12 outline-none bg-[#F6F6F6] text-sm text-gray-700 placeholder-gray-500 focus:ring focus:ring-lightGray duration-300"
             type="search"
@@ -88,7 +88,7 @@
         <!-- Right Section (Search and User Icon) -->
         <div class="flex items-center gap-2">
           <!-- Search Icon for Medium Screens -->
-          <i
+          <i id="openSearchBarBtn"
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
@@ -102,8 +102,11 @@
 
     <main>
       <!-- Hero Section -->
-      
-      <section id="heroSection" class="relative w-full h-[95vh] overflow-hidden bg-lightGray">
+
+      <section
+        id="heroSection"
+        class="relative w-full h-[95vh] overflow-hidden bg-lightGray"
+      >
         <!-- Slide Content -->
         <div class="slides transition-transform duration-500 ease-in-out">
           <!-- Dynamic slides will be injected here -->
@@ -155,8 +158,9 @@
         ></div>
         <!-- ---------------------------------------------------------------------------------------------------- -->
         <!-- Menu Modal -->
-        <div id="menuModal"
-          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-0 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 hidden"
+        <div
+          id="menuModal"
+          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-0 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 "
         >
           <!-- Search Input -->
           <div class="relative">
@@ -391,326 +395,368 @@
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto"
         >
           <!-- Product Card -->
-          <div
-            data-aos="fade-left"
-            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
-          >
-            <div class="w-full h-40 overflow-hidden">
-              <img
-                src="../assets/images/products/p1.jpg"
-                alt="چراغ تیگو 8"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h3
-                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
-              >
-                چراغ تیگو 8
-              </h3>
-              <span class="text-gray-700 text-sm text-center">
-                کد کالا : BP-8100
-              </span>
-              <div class="flex flex-row justify-between text-sm md:text-base">
-                <span>تیگو 8</span>
-                <span class="text-bgRed font-bold">تومان 149,000</span>
+          <article
+              data-aos="fade-left"
+              class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
+              itemscope
+              itemtype="https://schema.org/Product"
+            >
+              <!-- Card Image -->
+              <div class="w-full h-40 overflow-hidden">
+                <img
+                  src="../assets/images/products/p1.jpg"
+                  alt="چراغ تیگو 8 - چراغ مخصوص خودرو تیگو 8"
+                  class="w-full h-full object-cover"
+                  itemprop="image"
+                />
               </div>
-            </div>
-          </div>
+              <!-- Card Details -->
+              <div class="p-4 flex flex-col gap-2">
+                <!-- Product Name -->
+                <h3
+                  class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-bgRed transition-colors"
+                  itemprop="name"
+                >
+                  چراغ تیگو 8
+                </h3>
+                <span class="text-gray-700 text-sm text-center" itemprop="sku">
+                  کد کالا : BP-8100
+                </span>
+                <!-- Product Price -->
+                <div
+                  class="flex flex-row justify-between text-sm md:text-base"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="https://schema.org/Offer"
+                >
+                  <span itemprop="brand">تیگو 8</span>
+                  <span
+                    class="text-bgRed font-bold"
+                    itemprop="priceCurrency"
+                    content="IRR"
+                  >
+                    <meta itemprop="price" content="149000" />
+                    تومان 149,000
+                  </span>
+                </div>
+              </div>
+            </article>
 
           <!-- Repeat Product Cards -->
           <!-- Add as many as needed -->
-          <div
-            data-aos="fade-left"
-            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
-          >
-            <div class="w-full h-40 overflow-hidden">
-              <img
-                src="../assets/images/products/p1.jpg"
-                alt="چراغ تیگو 8"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h3
-                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
-              >
-                چراغ تیگو 8
-              </h3>
-              <span class="text-gray-700 text-sm text-center">
-                کد کالا : BP-8100
-              </span>
-              <div class="flex flex-row justify-between text-sm md:text-base">
-                <span>تیگو 8</span>
-                <span class="text-bgRed font-bold">تومان 149,000</span>
+          <article
+              data-aos="fade-left"
+              class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
+              itemscope
+              itemtype="https://schema.org/Product"
+            >
+              <!-- Card Image -->
+              <div class="w-full h-40 overflow-hidden">
+                <img
+                  src="../assets/images/products/p1.jpg"
+                  alt="چراغ تیگو 8 - چراغ مخصوص خودرو تیگو 8"
+                  class="w-full h-full object-cover"
+                  itemprop="image"
+                />
               </div>
-            </div>
-          </div>
+              <!-- Card Details -->
+              <div class="p-4 flex flex-col gap-2">
+                <!-- Product Name -->
+                <h3
+                  class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-bgRed transition-colors"
+                  itemprop="name"
+                >
+                  چراغ تیگو 8
+                </h3>
+                <span class="text-gray-700 text-sm text-center" itemprop="sku">
+                  کد کالا : BP-8100
+                </span>
+                <!-- Product Price -->
+                <div
+                  class="flex flex-row justify-between text-sm md:text-base"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="https://schema.org/Offer"
+                >
+                  <span itemprop="brand">تیگو 8</span>
+                  <span
+                    class="text-bgRed font-bold"
+                    itemprop="priceCurrency"
+                    content="IRR"
+                  >
+                    <meta itemprop="price" content="149000" />
+                    تومان 149,000
+                  </span>
+                </div>
+              </div>
+            </article>
 
-          <div
-            data-aos="fade-left"
-            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
-          >
-            <div class="w-full h-40 overflow-hidden">
-              <img
-                src="../assets/images/products/p1.jpg"
-                alt="چراغ تیگو 8"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h3
-                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
-              >
-                چراغ تیگو 8
-              </h3>
-              <span class="text-gray-700 text-sm text-center">
-                کد کالا : BP-8100
-              </span>
-              <div class="flex flex-row justify-between text-sm md:text-base">
-                <span>تیگو 8</span>
-                <span class="text-bgRed font-bold">تومان 149,000</span>
+          <article
+              data-aos="fade-left"
+              class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
+              itemscope
+              itemtype="https://schema.org/Product"
+            >
+              <!-- Card Image -->
+              <div class="w-full h-40 overflow-hidden">
+                <img
+                  src="../assets/images/products/p1.jpg"
+                  alt="چراغ تیگو 8 - چراغ مخصوص خودرو تیگو 8"
+                  class="w-full h-full object-cover"
+                  itemprop="image"
+                />
               </div>
-            </div>
-          </div>
+              <!-- Card Details -->
+              <div class="p-4 flex flex-col gap-2">
+                <!-- Product Name -->
+                <h3
+                  class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-bgRed transition-colors"
+                  itemprop="name"
+                >
+                  چراغ تیگو 8
+                </h3>
+                <span class="text-gray-700 text-sm text-center" itemprop="sku">
+                  کد کالا : BP-8100
+                </span>
+                <!-- Product Price -->
+                <div
+                  class="flex flex-row justify-between text-sm md:text-base"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="https://schema.org/Offer"
+                >
+                  <span itemprop="brand">تیگو 8</span>
+                  <span
+                    class="text-bgRed font-bold"
+                    itemprop="priceCurrency"
+                    content="IRR"
+                  >
+                    <meta itemprop="price" content="149000" />
+                    تومان 149,000
+                  </span>
+                </div>
+              </div>
+            </article>
 
-          <div
-            data-aos="fade-left"
-            class="productCard bg-lightGray rounded-xl flex flex-col gap-3 shadow-xl overflow-hidden"
-          >
-            <div class="w-full h-40 overflow-hidden">
-              <img
-                src="../assets/images/products/p1.jpg"
-                alt="چراغ تیگو 8"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h3
-                class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-limeGreen transition-colors"
-              >
-                چراغ تیگو 8
-              </h3>
-              <span class="text-gray-700 text-sm text-center">
-                کد کالا : BP-8100
-              </span>
-              <div class="flex flex-row justify-between text-sm md:text-base">
-                <span>تیگو 8</span>
-                <span class="text-bgRed font-bold">تومان 149,000</span>
+          <article
+              data-aos="fade-left"
+              class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
+              itemscope
+              itemtype="https://schema.org/Product"
+            >
+              <!-- Card Image -->
+              <div class="w-full h-40 overflow-hidden">
+                <img
+                  src="../assets/images/products/p1.jpg"
+                  alt="چراغ تیگو 8 - چراغ مخصوص خودرو تیگو 8"
+                  class="w-full h-full object-cover"
+                  itemprop="image"
+                />
               </div>
-            </div>
-          </div>
+              <!-- Card Details -->
+              <div class="p-4 flex flex-col gap-2">
+                <!-- Product Name -->
+                <h3
+                  class="font-semibold text-lg md:text-xl text-center cursor-pointer hover:text-bgRed transition-colors"
+                  itemprop="name"
+                >
+                  چراغ تیگو 8
+                </h3>
+                <span class="text-gray-700 text-sm text-center" itemprop="sku">
+                  کد کالا : BP-8100
+                </span>
+                <!-- Product Price -->
+                <div
+                  class="flex flex-row justify-between text-sm md:text-base"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="https://schema.org/Offer"
+                >
+                  <span itemprop="brand">تیگو 8</span>
+                  <span
+                    class="text-bgRed font-bold"
+                    itemprop="priceCurrency"
+                    content="IRR"
+                  >
+                    <meta itemprop="price" content="149000" />
+                    تومان 149,000
+                  </span>
+                </div>
+              </div>
+            </article>
+
         </div>
       </section>
 
-      <section id="tutorialSection" class="py-12 px-4 md:px-16" aria-labelledby="tutorial-heading">  
-        <h2   
-            id="tutorial-heading"   
-            class="text-steelGray font-bold text-2xl md:text-3xl text-center border-b pb-3 mb-8"  
-        >  
-            مطالب آموزشی  
-        </h2>  
+      <section id="tutorialSection" class="py-12 px-4 md:px-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">
+                مطالب آموزشی
+                <span class="block w-24 h-1 bg-[#C8102E] mx-auto mt-4"></span>
+            </h2>
     
-        <div   
-            id="tutorialSlider"   
-            class="relative overflow-hidden w-full bg-lightGray rounded-xl"  
-            role="region"   
-            aria-roledescription="توضیحات اسلایدر"  
-        >  
-            <div   
-                id="tutorialCardContainer"   
-                class="flex transition-transform duration-500 ease-in-out"  
-                role="group"  
-            >  
-                <!-- Tutorial Cards -->  
-                <article   
-                    class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-                >  
-                    <a href="#" class="block">  
-                        <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                            <img  
-                                src="../assets/images/cheryHero2.jpg"  
-                                alt="روغن ماشین و زمان تعویض"  
-                                class="w-full h-full object-cover"  
-                                loading="lazy"  
-                            />  
-                        </div>  
-                        <div class="p-4">  
-                            <h3 class="text-gray-800 hover:text-black duration-150">  
-                                روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                            </h3>  
-                        </div>  
-                    </a>  
-                </article>  
-
-                 <!-- Tutorial Cards -->  
-                 <article   
-                 class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-             >  
-                 <a href="#" class="block">  
-                     <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                         <img  
-                             src="../assets/images/cheryHero2.jpg"  
-                             alt="روغن ماشین و زمان تعویض"  
-                             class="w-full h-full object-cover"  
-                             loading="lazy"  
-                         />  
-                     </div>  
-                     <div class="p-4">  
-                         <h3 class="text-gray-800 hover:text-black duration-150">  
-                             روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                         </h3>  
-                     </div>  
-                 </a>  
-                </article> 
-                
-                <!-- Repeat similar article cards -->  
-                <!-- Tutorial Cards -->  
-                <article   
-                class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-            >  
-                <a href="#" class="block">  
-                    <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                        <img  
-                            src="../assets/images/cheryHero2.jpg"  
-                            alt="روغن ماشین و زمان تعویض"  
-                            class="w-full h-full object-cover"  
-                            loading="lazy"  
-                        />  
-                    </div>  
-                    <div class="p-4">  
-                        <h3 class="text-gray-800 hover:text-black duration-150">  
-                            روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                        </h3>  
-                    </div>  
-                </a>  
-               </article> 
-               
-               <!-- Tutorial Cards -->  
-               <article   
-               class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-           >  
-               <a href="#" class="block">  
-                   <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                       <img  
-                           src="../assets/images/cheryHero2.jpg"  
-                           alt="روغن ماشین و زمان تعویض"  
-                           class="w-full h-full object-cover"  
-                           loading="lazy"  
-                       />  
-                   </div>  
-                   <div class="p-4">  
-                       <h3 class="text-gray-800 hover:text-black duration-150">  
-                           روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                       </h3>  
-                   </div>  
-               </a>  
-              </article> 
-              
-              <!-- Tutorial Cards -->  
-              <article   
-              class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-          >  
-              <a href="#" class="block">  
-                  <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                      <img  
-                          src="../assets/images/cheryHero2.jpg"  
-                          alt="روغن ماشین و زمان تعویض"  
-                          class="w-full h-full object-cover"  
-                          loading="lazy"  
-                      />  
-                  </div>  
-                  <div class="p-4">  
-                      <h3 class="text-gray-800 hover:text-black duration-150">  
-                          روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                      </h3>  
-                  </div>  
-              </a>  
-             </article> 
-             
-             <!-- Tutorial Cards -->  
-             <article   
-             class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-         >  
-             <a href="#" class="block">  
-                 <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                     <img  
-                         src="../assets/images/cheryHero2.jpg"  
-                         alt="روغن ماشین و زمان تعویض"  
-                         class="w-full h-full object-cover"  
-                         loading="lazy"  
-                     />  
-                 </div>  
-                 <div class="p-4">  
-                     <h3 class="text-gray-800 hover:text-black duration-150">  
-                         روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                     </h3>  
-                 </div>  
-             </a>  
-            </article> 
-            
-            <!-- Tutorial Cards -->  
-            <article   
-            class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-        >  
-            <a href="#" class="block">  
-                <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                    <img  
-                        src="../assets/images/cheryHero2.jpg"  
-                        alt="روغن ماشین و زمان تعویض"  
-                        class="w-full h-full object-cover"  
-                        loading="lazy"  
-                    />  
-                </div>  
-                <div class="p-4">  
-                    <h3 class="text-gray-800 hover:text-black duration-150">  
-                        روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                    </h3>  
-                </div>  
-            </a>  
-           </article> 
-           
-           <!-- Tutorial Cards -->  
-           <article   
-           class="tutorial-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border bg-white shadow-xl rounded-lg mx-2"  
-       >  
-           <a href="#" class="block">  
-               <div class="w-full h-40 overflow-hidden rounded-t-lg">  
-                   <img  
-                       src="../assets/images/cheryHero2.jpg"  
-                       alt="روغن ماشین و زمان تعویض"  
-                       class="w-full h-full object-cover"  
-                       loading="lazy"  
-                   />  
-               </div>  
-               <div class="p-4">  
-                   <h3 class="text-gray-800 hover:text-black duration-150">  
-                       روغن ماشین بهتره که هر چند وقت یکبار عوض شود  
-                   </h3>  
-               </div>  
-           </a>  
-          </article> 
-          
-
-            </div>  
+            <div class="relative group">
+                <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white">
+                    <!-- Progress Bar -->
+                    <div id="progressBar" class="h-1 bg-gray-200">
+                        <div id="progressIndicator" class="h-full bg-[#C8102E] transition-all ease-linear duration-300" style="width: 0%"></div>
+                    </div>
     
-            <button   
-                id="prevBtn"   
-                class="absolute top-1/2 transform -translate-y-1/2 left-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"  
-                aria-label="اسلاید قبلی"  
-            >  
-                <i class="fas fa-angle-left text-white text-lg" aria-hidden="true"></i>  
-            </button>  
-            <button   
-                id="nextBtn"   
-                class="absolute top-1/2 transform -translate-y-1/2 right-2 bg-black/20 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/40"  
-                aria-label="اسلاید بعدی"  
-            >  
-                <i class="fas fa-angle-right text-white text-lg" aria-hidden="true"></i>  
-            </button>  
-        </div>  
-    </section>  
+                    <!-- Slider Container -->
+                    <div id="tutorialCardContainer" class="flex gap-6 px-4 py-8 overflow-hidden snap-x snap-mandatory touch-pan-x">
+                        <!-- Card 1 (Example) -->
+                        <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                                <a href="#" class="block">
+                                    <div class="h-48 overflow-hidden">
+                                        <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                                        <p class="text-gray-500 text-sm mt-2">
+                                            <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
 
+                         <!-- Card 1 (Example) -->
+                         <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                              <a href="#" class="block">
+                                  <div class="h-48 overflow-hidden">
+                                      <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                                  </div>
+                                  <div class="p-4">
+                                      <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                                      <p class="text-gray-500 text-sm mt-2">
+                                          <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                                      </p>
+                                  </div>
+                              </a>
+                          </div>
+                      </article>
+
+                       <!-- Card 1 (Example) -->
+                       <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <a href="#" class="block">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                                    <p class="text-gray-500 text-sm mt-2">
+                                        <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+
+                     <!-- Card 1 (Example) -->
+                     <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                          <a href="#" class="block">
+                              <div class="h-48 overflow-hidden">
+                                  <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                              </div>
+                              <div class="p-4">
+                                  <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                                  <p class="text-gray-500 text-sm mt-2">
+                                      <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                                  </p>
+                              </div>
+                          </a>
+                      </div>
+                  </article>
+
+                   <!-- Card 1 (Example) -->
+                   <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <a href="#" class="block">
+                            <div class="h-48 overflow-hidden">
+                                <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                                <p class="text-gray-500 text-sm mt-2">
+                                    <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+
+                 <!-- Card 1 (Example) -->
+                 <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                      <a href="#" class="block">
+                          <div class="h-48 overflow-hidden">
+                              <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                          </div>
+                          <div class="p-4">
+                              <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                              <p class="text-gray-500 text-sm mt-2">
+                                  <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                              </p>
+                          </div>
+                      </a>
+                  </div>
+              </article>
+
+               <!-- Card 1 (Example) -->
+               <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <a href="#" class="block">
+                        <div class="h-48 overflow-hidden">
+                            <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                            <p class="text-gray-500 text-sm mt-2">
+                                <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </article>
+
+             <!-- Card 1 (Example) -->
+             <article class="snap-center flex-shrink-0 w-72 transform transition-transform duration-300 hover:scale-105">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <a href="#" class="block">
+                      <div class="h-48 overflow-hidden">
+                          <img src="../assets/images/cheryHero2.jpg" alt="آموزش" class="w-full h-full object-cover">
+                      </div>
+                      <div class="p-4">
+                          <h3 class="text-gray-900 font-medium text-lg">آموزش تعویض روغن خودرو</h3>
+                          <p class="text-gray-500 text-sm mt-2">
+                              <i class="fas fa-clock ml-2"></i> ۸ دقیقه مطالعه
+                          </p>
+                      </div>
+                  </a>
+              </div>
+          </article>
+                        
+                        <!-- Add more articles here dynamically -->
+                    </div>
+    
+                    <!-- Navigation Buttons -->
+                    <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-200 transition-all">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-200 transition-all">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+    
+                <!-- Dots Navigation -->
+                <div id="sliderDots" class="flex justify-center gap-2 mt-6"></div>
+            </div>
+        </div>
+    </section>
       <!-- section for contact Us -->
       <section
         data-aos="fade-up"
@@ -974,7 +1020,6 @@
     </script>
     <script src="../assets/scripts/main.js"></script>
     <!-- <script src="../assets/scripts/homepage.js"></script> -->
-    <script src="/nazemi-yadak/assets/scripts/homePage.js"></script>
-
+    <script src="../assets/scripts/homepage.js"></script>
   </body>
 </html>

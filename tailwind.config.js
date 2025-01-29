@@ -18,6 +18,8 @@ module.exports = {
         lightGray : "#F3F4F6", //Clean, minimalistic background for sections.
         white : "#FFFFFF", //For primary backgrounds and text clarity.
         limeGreen : "#16A34A", //Use to emphasize discounts or urgent offers.
+        lightBlue : "#45b8ed",
+        darkBlue : "#08a0e7",
         bgRed : "#C8102E",
         darkerBgRed : "#c70021"
       },

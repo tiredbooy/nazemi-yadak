@@ -42,5 +42,89 @@ body{
     animation: slideOut 0.3s ease-in forwards;  
   }  
   
-  /* Optional: Add a backdrop for mobile view */  
- 
+  .tutorial-card {  
+    scroll-snap-align: center;  
+  }  
+  
+  #tutorialCardContainer {  
+    scroll-snap-type: x mandatory;  
+    -webkit-overflow-scrolling: touch;  
+  }  
+
+  .productSuccessMessage {
+    opacity: 0;
+  }
+
+  .productSuccess {
+    animation: product-success 1s forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+  }
+
+  #menuModal{
+    opacity: 0;
+  }
+
+  .activeModal{
+    animation: openMenu .5s forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation-delay: 0s;
+  }
+
+  .closeModal{
+    animation: closeModalAni .5s forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+  }
+
+
+  @keyframes product-success {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes openMenu{
+  0% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0%);
+  }
+}
+
+@keyframes closeModalAni{
+  0% {
+      opacity: 1;
+      transform: translateX(0%);
+  }
+
+
+  100% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+}
+
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.snap-slider {
+  scroll-snap-type: x mandatory;
+}
+.snap-card {
+  scroll-snap-align: start;
+}
