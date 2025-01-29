@@ -93,85 +93,140 @@ document.getElementById('nextSlide').onclick = () => changeSlide(1);
 window.onload = loadSlides;  
 
 
-function createTutorialSlider() {
-    const slider = document.getElementById('tutorialSlider');
-    const cardContainer = document.getElementById('tutorialCardContainer');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+function createTutorialSlider() {  
+    // Select Elements  
+    const slider = document.getElementById('toturialSlider');  
+    const cardContainer = document.getElementById('toturialCardContainer');  
+    const prevBtn = document.getElementById('prevBtn');  
+    const nextBtn = document.getElementById('nextBtn');  
+    
+    // Ensure cards are selected after potential dynamic content  
+    let cards = Array.from(cardContainer.children);  
+    
+    // Slider Configuration  
+    let currentIndex = 0;  
+    const gap = 16; // Tailwind mx-2 equivalent  
 
-    let cards = Array.from(cardContainer.querySelectorAll('.tutorial-card'));
-    let currentIndex = 0;
-    const gap = 16; // Matches mx-2 (8px each side)
+    // Responsive Slides Calculation  
+    function getSlidesToShow() {  
+        const width = window.innerWidth;  
+        if (width >= 1024) return 4;  
+        if (width >= 768) return 3;  
+        if (width >= 640) return 2;  
+        return 1;  
+    }  
 
-    function getSlidesToShow() {
-        const width = window.innerWidth;
-        if (width >= 1024) return 4;
-        if (width >= 768) return 3;
-        if (width >= 640) return 2;
-        return 1;
-    }
+    // Recalculate cards (useful for dynamic content)  
+    function updateCards() {  
+        cards = Array.from(cardContainer.children);  
+    }  
 
-    function updateCardLayout() {
-        cards = Array.from(cardContainer.querySelectorAll('.tutorial-card'));
-        const containerWidth = slider.clientWidth;
-        const cardsToShow = getSlidesToShow();
+    // Update Card Widths Dynamically  
+    function updateCardWidths() {  
+        updateCards();  
+        
+        const containerWidth = slider.clientWidth;  
+        const cardsToShow = getSlidesToShow();  
+        
+        // Calculate card width considering gap  
+        const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;  
 
-        const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;
+        cards.forEach(card => {  
+            card.style.width = `${cardWidth}px`;  
+            card.style.flexShrink = '0';  
+            card.style.marginRight = `${gap / 2}px`;  
+            card.style.marginLeft = `${gap / 2}px`;  
+        });  
+    }  
 
-        cards.forEach(card => {
-            card.style.width = `${cardWidth}px`;
-            card.style.flexShrink = '0';
-            card.style.marginRight = `${gap / 2}px`;
-            card.style.marginLeft = `${gap / 2}px`;
-        });
-    }
+    // Slide Animation  
+    function slideCards() {  
+        updateCards();  
+        
+        const cardsToShow = getSlidesToShow();  
+        const cardWidth = cards[0].offsetWidth;  
+        const totalSlideWidth = cardWidth + gap;  
+        
+        // Calculate translation  
+        const translateX = currentIndex * totalSlideWidth;  
+        
+        cardContainer.style.transform = `translateX(-${translateX}px)`;  
+    }  
 
-    function slideCards() {
-        const cardsToShow = getSlidesToShow();
-        const cardWidth = cards[0]?.offsetWidth || 0; // Handle no cards
-        const groupWidth = (cardWidth * cardsToShow) + (gap * (cardsToShow - 1));
-        const translateX = currentIndex * groupWidth;
+    // Navigation Functions  
+    function nextSlide() {  
+        updateCards();  
+        const cardsToShow = getSlidesToShow();  
+        const maxIndex = Math.max(0, cards.length - cardsToShow);  
+        
+        currentIndex = Math.min(currentIndex + 1, maxIndex);  
+        slideCards();  
+    }  
 
-        cardContainer.style.transform = `translateX(-${translateX}px)`;
-    }
+    function prevSlide() {  
+        currentIndex = Math.max(currentIndex - 1, 0);  
+        slideCards();  
+    }  
 
-    function nextSlide() {
-        const cardsToShow = getSlidesToShow();
-        const maxIndex = Math.max(0, Math.ceil(cards.length / cardsToShow) - 1);
-        currentIndex = Math.min(currentIndex + 1, maxIndex);
-        slideCards();
-    }
+    // Initialization  
+    function initializeSlider() {  
+        // Styling  
+        cardContainer.style.display = 'flex';  
+        cardContainer.style.transition = 'transform 500ms ease-in-out';  
+        cardContainer.style.width = '100%';  
 
-    function prevSlide() {
-        currentIndex = Math.max(currentIndex - 1, 0);
-        slideCards();
-    }
+        // Update initial widths  
+        updateCardWidths();  
 
-    function initializeSlider() {
-        cardContainer.style.display = 'flex';
-        cardContainer.style.transition = 'transform 500ms ease-in-out';
-        cardContainer.style.width = '100%';
+        // Attach Event Listeners  
+        nextBtn.addEventListener('click', nextSlide);  
+        prevBtn.addEventListener('click', prevSlide);  
 
-        updateCardLayout();
+        // Responsive Handling  
+        window.addEventListener('resize', () => {  
+            updateCardWidths();  
+            slideCards();  
+        });  
+    }  
 
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+    // Touch Support (Optional)  
+    function addTouchSupport() {  
+        let startX = 0;  
+        let endX = 0;  
 
-        window.addEventListener('resize', () => {
-            const prevSlidesToShow = getSlidesToShow();
-            updateCardLayout();
-            // Reset currentIndex if it exceeds new maxIndex after resize
-            const newSlidesToShow = getSlidesToShow();
-            const newMaxIndex = Math.max(0, Math.ceil(cards.length / newSlidesToShow) - 1);
-            if (currentIndex > newMaxIndex) currentIndex = newMaxIndex;
-            slideCards();
-        });
-    }
+        cardContainer.addEventListener('touchstart', (e) => {  
+            startX = e.touches[0].clientX;  
+        });  
 
-    // Keep existing touch support and init code...
+        cardContainer.addEventListener('touchend', (e) => {  
+            endX = e.changedTouches[0].clientX;  
+            
+            if (startX - endX > 50) {  
+                // Swipe Left  
+                nextSlide();  
+            } else if (endX - startX > 50) {  
+                // Swipe Right  
+                prevSlide();  
+            }  
+        });  
+    }  
 
-    initializeSlider();
-    addTouchSupport(); // Ensure this function is defined as before
-}
+    // Initialize Everything  
+    function init() {  
+        initializeSlider();  
+        addTouchSupport();  
+    }  
 
+    // Kick off the slider  
+    init();  
+
+    // Expose controls if needed  
+    return {  
+        next: nextSlide,  
+        previous: prevSlide,  
+        updateCards: updateCards  
+    };  
+}  
+
+// Initialize on DOM Load  
 document.addEventListener('DOMContentLoaded', createTutorialSlider);
