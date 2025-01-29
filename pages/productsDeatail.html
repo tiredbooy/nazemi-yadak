@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="خرید زه استیل رکاب جلو راست مناسب برای تیگو ۸، با قیمت مناسب و کیفیت بالا">
+    <meta
+      name="description"
+      content="خرید زه استیل رکاب جلو راست مناسب برای تیگو ۸، با قیمت مناسب و کیفیت بالا"
+    />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <title>Document</title>
+    <title>اسم محصول</title>
   </head>
   <body>
     <header>
@@ -87,7 +90,8 @@
         <!-- Right Section (Search and User Icon) -->
         <div class="flex items-center gap-2">
           <!-- Search Icon for Medium Screens -->
-          <i id="openSearchBarBtn"
+          <i
+            id="openSearchBarBtn"
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
@@ -100,117 +104,154 @@
     </header>
 
     <main>
-        <!-- ---------------------------------------------------------------------------------------------------- -->
-        <!-- Menu Modal -->
-        <div
-          id="menuModal"
-          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-20 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
-        >
-          <!-- Search Input -->
-          <div class="relative">
-            <input
-              type="text"
-              placeholder="جستجو..."
-              class="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 duration-150"
+      <!-- ---------------------------------------------------------------------------------------------------- -->
+      <!-- Menu Modal -->
+      <div
+        id="menuModal"
+        class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-20 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
+      >
+        <!-- Search Input -->
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="جستجو..."
+            class="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 duration-150"
+          />
+          <i
+            class="fas fa-search absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+          ></i>
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="flex flex-col gap-4 text-lg font-medium text-gray-700">
+          <li>
+            <a
+              href="#"
+              class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+              >خانه</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+              >محصولات</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+              >دسته بندی</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+              >آموزش ها</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
+              >ارتباط با ما</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- ----- -->
+
+      <div
+        class="max-w-4xl mx-auto p-8 bg-white shadow-xl rounded-2xl mt-10 flex flex-col space-y-6 border border-gray-200"
+      >
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <!-- Product Image -->
+          <div>
+            <img
+              src="../assets/images/products/p1.jpg"
+              alt="رینگ تیگو 8"
+              class="w-full h-60 object-cover rounded-lg shadow-md"
             />
-            <i
-              class="fas fa-search absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
-            ></i>
           </div>
-
-          <!-- Menu Items -->
-          <ul class="flex flex-col gap-4 text-lg font-medium text-gray-700">
-            <li>
+          <!-- Product Info -->
+          <div class="space-y-6">
+            <h1 class="text-3xl font-bold text-gray-800">رینگ تیگو 8</h1>
+            <p
+              class="bg-red-600 text-white text-xl font-semibold inline-block px-4 py-2 rounded-lg shadow-md"
+            >
+              1,300,000 تومان
+            </p>
+            <p class="text-gray-700 text-lg">
+              مناسب برای: <span class="font-semibold">چری تیگو ۸</span>
+            </p>
+            <p class="text-gray-700 text-lg">
+              کد محصول: <span class="font-semibold">CH-IR-001</span>
+            </p>
+            <p class="text-gray-700 text-lg">
+              کشور سازنده: <span class="font-semibold">چین</span>
+            </p>
+            <!-- Call Button -->
+            <div class="mt-6">
               <a
-                href="#"
-                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
-                >خانه</a
+                href="tel:09393591452"
+                class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg shadow-md text-lg font-semibold flex items-center justify-center gap-2"
               >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
-                >محصولات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
-                >دسته بندی</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
-                >آموزش ها</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block p-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200"
-                >ارتباط با ما</a
-              >
-            </li>
-          </ul>
+                <i class="fas fa-phone-alt"></i> تماس بگیرید
+              </a>
+            </div>
+          </div>
         </div>
-        <!-- ----- -->
-
-        <div class="max-w-4xl mx-auto p-8 bg-white shadow-xl rounded-2xl mt-10 flex flex-col space-y-6 border border-gray-200">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <!-- Product Image -->
-                <div>
-                    <img src="../assets/images/products/p1.jpg" alt="رینگ تیگو 8" class="w-full h-60 object-cover rounded-lg shadow-md">
-                </div>
-                <!-- Product Info -->
-                <div class="space-y-6">
-                    <h1 class="text-3xl font-bold text-gray-800">رینگ تیگو 8</h1>
-                    <p class="bg-red-600 text-white text-xl font-semibold inline-block px-4 py-2 rounded-lg shadow-md">1,300,000 تومان</p>
-                    <p class="text-gray-700 text-lg">مناسب برای: <span class="font-semibold">چری تیگو ۸</span></p>
-                    <p class="text-gray-700 text-lg">کد محصول: <span class="font-semibold">CH-IR-001</span></p>
-                    <p class="text-gray-700 text-lg">کشور سازنده: <span class="font-semibold">چین</span></p>
-                    <!-- Call Button -->
-                    <div class="mt-6">
-                        <a href="tel:09393591452" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg shadow-md text-lg font-semibold flex items-center justify-center gap-2">
-                            <i class="fas fa-phone-alt"></i> تماس بگیرید
-                        </a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <!-- Secondary Container with Border -->
+      <div
+        class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-2xl mt-6 border-b-2 border-gray-300"
+      >
+        <div class="flex border-b-2 border-gray-300">
+          <button
+            onclick="toggleInfo('description', this)"
+            class="flex-1 text-center py-3 border-b-2 border-transparent hover:border-black text-gray-900 text-lg flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-info-circle"></i> توضیحات
+          </button>
+          <button
+            onclick="toggleInfo('additional-info', this)"
+            class="flex-1 text-center py-3 border-b-2 border-black text-gray-900 text-lg flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-list"></i> اطلاعات تکمیلی
+          </button>
         </div>
-        <!-- Secondary Container with Border -->
-        <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-2xl mt-6 border-b-2 border-gray-300">
-            <div class="flex border-b-2 border-gray-300">
-                <button onclick="toggleInfo('description', this)" class="flex-1 text-center py-3 border-b-2 border-transparent hover:border-black text-gray-900 text-lg flex items-center justify-center gap-2">
-                    <i class="fas fa-info-circle"></i> توضیحات
-                </button>
-                <button onclick="toggleInfo('additional-info', this)" class="flex-1 text-center py-3 border-b-2 border-transparent hover:border-black text-gray-900 text-lg flex items-center justify-center gap-2">
-                    <i class="fas fa-list"></i> اطلاعات تکمیلی
-                </button>
-            </div>
-            <div id="description" class="hidden mt-4 p-4 bg-gray-100 rounded-lg flex flex-col gap-3">
-                <p class="text-gray-700 text-lg">مناسب برای: <span class="font-semibold">چری تیگو ۸</span></p>
-                <p class="text-gray-700 text-lg">کد محصول: <span class="font-semibold">CH-IR-001</span></p>
-                <p class="text-gray-700 text-lg">کشور سازنده: <span class="font-semibold">چین</span></p>
-            </div>
-            <div id="additional-info" class="hidden mt-4 p-4 bg-gray-100 rounded-lg flex flex-col gap-4">
-                <div class="flex flex-row justify-around border-b pb-2 border-gray-300">
-                    <span>برند خودرو</span>
-                    <span>چری</span>
-                </div>
-                <div class="flex flex-row justify-around">
-                    <span>
-                        نوع قطعه
-                    </span>
-                    <span>
-                        رینگ
-                    </span>
-                </divclass=>
-            </div>
+        <div
+          id="description"
+          class="hidden mt-4 p-4 bg-gray-100 rounded-lg flex flex-col gap-3"
+        >
+          <p class="text-gray-700 text-lg">
+            مناسب برای: <span class="font-semibold">چری تیگو ۸</span>
+          </p>
+          <p class="text-gray-700 text-lg">
+            کد محصول: <span class="font-semibold">CH-IR-001</span>
+          </p>
+          <p class="text-gray-700 text-lg">
+            کشور سازنده: <span class="font-semibold">چین</span>
+          </p>
         </div>
+        <div
+          id="additional-info"
+          class="mt-4 p-4 bg-gray-100 rounded-lg flex flex-col gap-4"
+        >
+          <div
+            class="flex flex-row justify-around border-b pb-2 border-gray-300"
+          >
+            <span>برند خودرو</span>
+            <span>چری</span>
+          </div>
+          <div class="flex flex-row justify-around">
+            <span> نوع قطعه </span>
+            <span> رینگ </span>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="bg-lightGray text-gray-800">
@@ -351,24 +392,22 @@
       </div>
     </footer>
 
-
     <script>
-         function toggleInfo(section, btn) {
-            document.getElementById('description').classList.add('hidden');
-            document.getElementById('additional-info').classList.add('hidden');
-            document.getElementById(section).classList.toggle('hidden');
+      function toggleInfo(section, btn) {
+        document.getElementById("description").classList.add("hidden");
+        document.getElementById("additional-info").classList.add("hidden");
+        document.getElementById(section).classList.toggle("hidden");
 
-            document.querySelectorAll(".border-b-2").forEach(button => {
-                button.classList.remove("border-black");
-            });
-            btn.classList.add("border-black");
-        }
+        document.querySelectorAll(".border-b-2").forEach((button) => {
+          button.classList.remove("border-black");
+        });
+        btn.classList.add("border-black");
+      }
     </script>
     <script src="../assets/scripts/main.js"></script>
     <script
-    src="https://kit.fontawesome.com/febee2a18d.js"
-    crossorigin="anonymous"
+      src="https://kit.fontawesome.com/febee2a18d.js"
+      crossorigin="anonymous"
     ></script>
   </body>
 </html>
-
