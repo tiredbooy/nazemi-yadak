@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
+    <link rel="shortcut icon" href="/assets/images/carLogos/ico.png" type="image/x-icon">
+    <meta name="description" content="فروش انواع لوازم یدکی ماشین های چینی با بهترین قیمت و کیفیت">  
+    <meta name="keywords" content="لوازم یدکی, لوازم ماشین, ماشین چینی, لوازم یدکی ماشین چینی">  
+    <meta name="author" content="لوازم یدکی ناظمی">  
+    <meta property="og:url" content="The URL of your page">  
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>محصولات</title>
   </head>
   <body>
     <!-- Site Header -->
+    <!-- Site Header -->
     <header>
       <nav
-        class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
+        class="bg-bgRed w-full p-5 shadow-xl flex flex-col gap-2"
       >
-        <!-- Left Section (Menu Icon for Small Screens) -->
+        <div class="flex items-center justify-between">
+          <!-- Left Section (Menu Icon for Small Screens) -->
         <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
@@ -26,13 +33,8 @@
 
         <!-- Center Section (Logo and Company Name) -->
         <div class="flex items-center justify-center gap-2 lg:gap-4">
-          <img
-            class="w-16"
-            src="../assets/images/cheryLogo.png"
-            alt="Chery Logo - لوازم یدکی ناظمی"
-          />
           <h2 class="font-bold text-white text-lg lg:text-xl text-center">
-            لوازم یدکی ناظمی
+            فروشگاه مجهز قطعات یدکی ناظمی 
           </h2>
         </div>
 
@@ -93,11 +95,9 @@
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
-          <!-- User Icon -->
-          <!-- <i
-              class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
-            ></i> -->
         </div>
+        </div>
+         
       </nav>
     </header>
 
@@ -106,7 +106,7 @@
       <!-- Menu Modal -->
       <div
         id="menuModal"
-        class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-20 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
+        class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-16 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
       >
         <!-- Search Input -->
         <div class="relative">
@@ -229,7 +229,7 @@
           <!-- Top of the product container -->
           <div class="flex flex-row justify-between border-b pb-1 items-center">
             <div class="flex flex-row gap-5 items-center">
-              <i id="openFilterSetting" class="fas fa-sliders-h text-gray-700 hover:text-black block lg:!hidden cursor-pointer"></i>
+              <i id="openFilterSetting" class="fas fa-sliders-h text-gray-700 hover:text-black block lg:!hidden !cursor-pointer z-50"></i>
               <span class="font-bold text-gray-700 hidden md:!block lg:hidden"> تمام محصولات </span>
             </div>
             <!-- Sort By Filter -->
@@ -249,8 +249,7 @@
           </div>
 
 
-          <div
-            id="productCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-lg p-4">
+          <div id="productCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-lg p-4">
             <!-- Product Card -->
 
             <article
@@ -632,6 +631,17 @@
 
           </div>
 
+          <div dir="ltr" id="pagination" class="w-full border-t py-4 flex flex-row items-center justify-center gap-2">
+            <!-- Active Page Button -->
+            <div class="rounded bg-bgRed w-9 h-9 text-center px-3 py-2 text-white hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">1</div>
+            <!-- Active Page Button -->
+            <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">2</div>
+            <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">3</div>
+            <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">4</div>
+            <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">5</div>
+            <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">6</div>
+          </div>
+
         </div>
 
       </div>
@@ -783,10 +793,13 @@
     <script>
       AOS.init();
     </script>
-     <!-- <script src="../assets/scripts/main.js"></script> -->
-     <!-- <script src="../assets/scripts/products.js"></script> -->
-    <script src="/nazemi-yadak/assets/scripts/main.js"></script>
+     <script src="../assets/scripts/main.js"></script>
+     <script src="../assets/scripts/products.js"></script>
+     <script>
+      
+     </script>
+    <!-- <script src="/nazemi-yadak/assets/scripts/main.js"></script> -->
 
-     <script src="/nazemi-yadak/assets/scripts/products.js"></script>
+     <!-- <script src="/nazemi-yadak/assets/scripts/products.js"></script> -->
   </body>
 </html>

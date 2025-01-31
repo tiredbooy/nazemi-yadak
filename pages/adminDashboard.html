@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
+    <link rel="shortcut icon" href="/assets/images/carLogos/ico.png" type="image/x-icon">
     <title>پنل مدیریت فروشگاه</title>
   </head>
   <body class="bg-gray-900 text-gray-100">
@@ -277,6 +278,22 @@
                   ></i>
                 </div>
               </div>
+
+              <!-- Product Price -->
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3">شرکت محصول</label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all duration-150"
+                    placeholder="mvm , chery , hmc , jac ..."
+                  />
+                  <i
+                    class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
             </div>
 
             <!-- Form Actions -->
@@ -380,6 +397,36 @@
               </div>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3">نام نویسنده</label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all"
+                    placeholder=" نام نویسنده"
+                  />
+                  <i
+                    class="fas fa-heading absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3">توضیحات تکمیلی</label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all"
+                    placeholder=" توضیحات تکمیلی"
+                  />
+                  <i
+                    class="fas fa-folder absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
             <!-- Dynamic Steps -->
             <div id="stepsContainer" class="space-y-4">
               <!-- Step 1 -->
@@ -454,7 +501,7 @@
     </div>
 
     <!-- <script src="../assets/scripts/adminDashboard.js"></script> -->
-    <script src=/assets/scripts/adminDashboard.js"></script>
+    <script src="../assets/scripts/adminDashboard.js"></script>
     <script
       src="https://kit.fontawesome.com/febee2a18d.js"
       crossorigin="anonymous"

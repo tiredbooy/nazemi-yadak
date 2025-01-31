@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="آموزش‌های تخصصی درباره قطعات چینی. راهنمای گام‌به‌گام برای درک و استفاده موثر از قطعات چینی."
+      content="آموزش‌های تخصصی درباره قطعات چینی.[toturial Title]."
     />
     <meta
       name="keywords"
-      content="قطعات چینی, آموزش, راهنما, DIY, قطعات خودرو"
+      content="قطعات چینی, آموزش, راهنما, [toturial Title], قطعات خودرو"
     />
-    <meta name="author" content="نام وب‌سایت شما" />
+    <meta name="description" content="A brief description of your page, ideally around 150-160 characters.">  
+    <meta name="keywords" content="آموزش, راهنما, ماشین چینی, [toturial title]">  
+    <meta name="author" content="لوازم یدکی ناظمی">   
+    <meta property="og:title" content="Your Page Title Here">  
+    <meta property="og:description" content="A brief description of your page for social media sharing.">  
+    <meta property="og:image" content="URL to an image representing the page">  
+    <meta property="og:url" content="The URL of your page">  
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <title>جزئیات آموزش - نام وب‌سایت شما</title>
+    <link rel="shortcut icon" href="/assets/images/carLogos/ico.png" type="image/x-icon">
+    <title>[toturial Title] - ناظمی یدک</title>
   </head>
   <body class="bg-lightGray text-steelGray">
-    <!-- هدر -->
+    <!-- Site Header -->
     <header>
       <nav
-        class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
+        class="bg-bgRed w-full p-5 shadow-xl flex flex-col gap-2"
       >
-        <!-- Left Section (Menu Icon for Small Screens) -->
+        <div class="flex items-center justify-between">
+          <!-- Left Section (Menu Icon for Small Screens) -->
         <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
@@ -34,13 +42,8 @@
 
         <!-- Center Section (Logo and Company Name) -->
         <div class="flex items-center justify-center gap-2 lg:gap-4">
-          <img
-            class="w-16"
-            src="../assets/images/cheryLogo.png"
-            alt="Chery Logo - لوازم یدکی ناظمی"
-          />
           <h2 class="font-bold text-white text-lg lg:text-xl text-center">
-            لوازم یدکی ناظمی
+            فروشگاه مجهز قطعات یدکی ناظمی 
           </h2>
         </div>
 
@@ -101,11 +104,9 @@
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
-          <!-- User Icon -->
-          <!-- <i
-              class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
-            ></i> -->
         </div>
+        </div>
+         
       </nav>
     </header>
 
@@ -115,7 +116,7 @@
       <!-- Menu Modal -->
       <div
         id="menuModal"
-        class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-20 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
+        class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-16 right-0 flex flex-col gap-5 p-4 shadow-xl z-50"
       >
         <!-- Search Input -->
         <div class="relative">
@@ -405,18 +406,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- <script>
-        let btns = document.querySelectorAll('.callToActionBtns')
-        btns.forEach(a => {
-            a.addEventListener('click',(e) => {
-                e.preventDefault()
-                if(e.target.textContent == 'خرید قطعات'){
-                    window
-                }
-            })
-        })
-    </script> -->
 
     <script
       src="https://kit.fontawesome.com/febee2a18d.js"

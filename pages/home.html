@@ -3,18 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/carLogos/ico.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>Home</title>
+    <meta name="description" content="فروش انواع لوازم یدکی ماشین های چینی با بهترین قیمت و کیفیت">  
+    <meta name="keywords" content="خرید لوازم ماشین چینی, تیگو 8, اریزو, خرید لوازم  ماشین ">  
+    <meta name="author" content="لوازم یدکی ناظمی"> 
+    <title>خانه</title>
   </head>
   <body>
     <!-- Site Header -->
     <header>
       <nav
-        class="bg-bgRed w-full p-5 shadow-xl flex items-center justify-between"
+        class="bg-bgRed w-full p-5 shadow-xl flex flex-col gap-2"
       >
-        <!-- Left Section (Menu Icon for Small Screens) -->
+        <div class="flex items-center justify-between">
+          <!-- Left Section (Menu Icon for Small Screens) -->
         <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
@@ -26,13 +31,8 @@
 
         <!-- Center Section (Logo and Company Name) -->
         <div class="flex items-center justify-center gap-2 lg:gap-4">
-          <img
-            class="w-16"
-            src="../assets/images/cheryLogo.png"
-            alt="Chery Logo - لوازم یدکی ناظمی"
-          />
           <h2 class="font-bold text-white text-lg lg:text-xl text-center">
-            لوازم یدکی ناظمی
+            فروشگاه مجهز قطعات یدکی ناظمی 
           </h2>
         </div>
 
@@ -93,77 +93,19 @@
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
-          <!-- User Icon -->
-          <!-- <i
-              class="fa-solid fa-user text-lightGray text-lg cursor-pointer hover:text-white"
-            ></i> -->
         </div>
+        </div>
+         
       </nav>
     </header>
 
     <main>
-      <!-- Hero Section -->
 
-      <section
-        id="heroSection"
-        class="relative w-full h-[95vh] overflow-hidden bg-lightGray"
-      >
-        <!-- Slide Content -->
-        <div class="slides transition-transform duration-500 ease-in-out">
-          <!-- Dynamic slides will be injected here -->
-        </div>
-
-        <!-- Overlay for Text Visibility -->
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
-        <!-- Hero Content -->
-        <div
-          class="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-8 md:px-12"
-        >
-          <div class="max-w-4xl heroContent">
-            <h1
-              id="heroSectionTitle"
-              class="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
-            ></h1>
-            <p
-              id="heroSectionDes"
-              class="text-white text-sm sm:text-lg md:text-xl mb-6"
-            ></p>
-            <a
-              href="#"
-              class="inline-block hero-button bg-bgRed hover:bg-darkerBgRed text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all"
-            >
-              مشاهده محصولات
-              <!-- Initial text; will be updated dynamically -->
-            </a>
-          </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button
-          id="prevSlide"
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition cursor-pointer z-50"
-        >
-          <i class="fas fa-angle-left"></i>
-        </button>
-        <button
-          id="nextSlide"
-          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition z-50"
-        >
-          <i class="fas fa-angle-right"></i>
-        </button>
-
-        <!-- Indicator Dots -->
-        <div
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50 indicator-dots"
-        ></div>
-        <!-- ---------------------------------------------------------------------------------------------------- -->
-        <!-- Menu Modal -->
-        <!-- ---------------------------------------------------------------------------------------------------- -->
+              <!-- ---------------------------------------------------------------------------------------------------- -->
         <!-- Menu Modal -->
         <div
           id="menuModal"
-          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-0 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 "
+          class="bg-lightGray w-full md:w-1/2 lg:w-1/4 absolute top-16 right-0 flex flex-col gap-5 p-4 shadow-xl z-50 "
         >
           <!-- Search Input -->
           <div class="relative">
@@ -218,7 +160,91 @@
         </div>
         <!-- ----- -->
         <!-- ---------------------------------------------------------------------------------------------------- -->
+
+      <!-- Hero Section -->
+
+      <section id="heroSection"
+        class="relative w-full h-[95vh] overflow-hidden bg-lightGray"
+      >
+        <!-- Slide Content -->
+        <div class="slides transition-transform duration-500 ease-in-out">
+          <!-- Dynamic slides will be injected here -->
+        </div>
+
+        <!-- Overlay for Text Visibility -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        <!-- Hero Content -->
+        <div
+          class="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-8 md:px-12"
+        >
+          <div class="max-w-4xl heroContent">
+            <h1
+              id="heroSectionTitle"
+              class="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
+            ></h1>
+            <p
+              id="heroSectionDes"
+              class="text-white text-sm sm:text-lg md:text-xl mb-6"
+            ></p>
+            <a
+              href="#"
+              class="inline-block hero-button bg-bgRed hover:bg-darkerBgRed text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all"
+            >
+              مشاهده محصولات
+              <!-- Initial text; will be updated dynamically -->
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          id="prevSlide"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition cursor-pointer z-50"
+        >
+          <i class="fas fa-angle-left"></i>
+        </button>
+        <button
+          id="nextSlide"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl p-3 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition z-50"
+        >
+          <i class="fas fa-angle-right"></i>
+        </button>
+
+        <!-- Indicator Dots -->
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50 indicator-dots"
+        ></div>
+
       </section>
+
+      <section class="bg-bgRed py-1 shadow-md overflow-hidden text-center">
+        <div class="logos-container max-h-[200px] flex items-center gap-20 animate-scroll overflow-hidden justify-center">
+          <div class="flex flex-col items-center justify-center w-[14%]">
+            <img src="../assets/images/carLogos/jacLogo.png" alt="Company 4" loading="lazy" class="">
+            <span class="font-bold text-bgRed">JAC</span>
+          </div>
+          <div class="w-[16%]">
+            <img src="../assets/images/carLogos/chery.png" alt="Company 2" loading="lazy" class="">
+          </div>
+
+          <div class="w-[16%]">
+            <img src="../assets/images/carLogos/fownix-removebg-preview.png" alt="Company 3" loading="lazy" class="">
+          </div>
+
+          <div class="w-[16%]">
+            <img src="../assets/images/carLogos/modiranLogo.png" alt="Company 6" loading="lazy" class="">
+          </div>
+
+          <div class="w-[14%]">
+            <img src="../assets/images/carLogos/kmc.png" alt="Company 3" loading="lazy" class="">
+          </div>
+
+        </div>
+
+      </section>
+      
+
       <!-- Category Base On car -->
       <section id="carCategory">
         <div class="container mx-auto py-12 flex flex-col items-center gap-12">
@@ -228,15 +254,14 @@
 
           <div class="flex flex-wrap gap-6 justify-center w-full px-4">
             <!-- Car Item -->
-            <div
-              data-aos="fade-right"
+            <div data-aos="fade-right"
               class="flex flex-col items-center p-4 rounded-lg group cursor-pointer relative"
             >
               <div
                 class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
-                  src="../assets/images/tiggo8.png"
+                  src="../assets/images/carPictures/extrim777.jpg"
                   alt="تیگو 8"
                   class="w-full h-full object-cover"
                 />
@@ -257,7 +282,7 @@
                 class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
-                  src="../assets/images/arrizo.jpg"
+                  src="../assets/images/carPictures/kmc-k7.webp"
                   alt="تیگو 8"
                   class="w-full h-full object-cover"
                 />
@@ -278,7 +303,7 @@
                 class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
-                  src="../assets/images/tiggo8.png"
+                  src="../assets/images/carPictures/tiggo-8.jpg"
                   alt="تیگو 8"
                   class="w-full h-full object-cover"
                 />
@@ -320,7 +345,7 @@
                 class="w-52 h-52 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition duration-300 border"
               >
                 <img
-                  src="../assets/images/tiggo8.png"
+                  src="../assets/images/carPictures/Chery-white-min.jpg"
                   alt="تیگو 8"
                   class="w-full h-full object-cover"
                 />
@@ -1100,10 +1125,10 @@
         "url": ["/home", "/products", "/categories", "/tutorials", "/contact"]
       }
     </script>
-    <!-- <script src="../assets/scripts/main.js"></script> -->
-    <script src="/nazemi-yadak/assets/scripts/main.js"></script>
+    <script src="../assets/scripts/main.js"></script>
+    <!-- <script src="/nazemi-yadak/assets/scripts/main.js"></script> -->
 
-    <!-- <script src="../assets/scripts/homepage.js"></script> -->
-    <script src="/nazemi-yadak/assets/scripts/homePage.js"></script>
+    <script src="../assets/scripts/homepage.js"></script>
+    <!-- <script src="/nazemi-yadak/assets/scripts/homePage.js"></script> -->
   </body>
 </html>

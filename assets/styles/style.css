@@ -128,3 +128,17 @@ body{
 .snap-card {
   scroll-snap-align: start;
 }
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 6s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
