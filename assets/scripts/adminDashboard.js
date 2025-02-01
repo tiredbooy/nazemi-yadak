@@ -1,22 +1,92 @@
 // Mobile menu toggle  
 const menuButton = document.querySelector('#menuButton');  
 const sidebar = document.querySelector('aside');  
+
 const addNewProduct = document.getElementById('addNewProduct');
 const currentProductsInfo = document.getElementById('currentProductsInfo');
 const productForm = document.getElementById('productForm');
-const tutorialForm = document.getElementById('tutorialForm');
 const cancleUploadproductBtn = document.getElementById('cancelUploadproductBtn');
 const saveNewProduct = document.getElementById('saveNewProduct');
 const sections = document.querySelectorAll('section');
 const productSuccessMessageDiv = document.querySelector('.productSuccessMessage');
 const showProductManager = document.getElementById('showProductManager');
-const showToturial = document.getElementById('showToturial');
-const showProductManagerItem = document.querySelector('#showProductManager a');
-const showToturialItem = document.querySelector('#showToturial a');
-const ul = document.querySelectorAll('ul a');
+
+const tutorialForm = document.getElementById('tutorialForm');
+const showToturial = document.getElementById('showTutorials');
 const cancelUploadToturial = document.getElementById('cancelUploadToturial');
 const uploadNewToturial = document.getElementById('uploadNewToturial');
 
+const currentCategory = document.getElementById('currentCategory');
+const categoryForm = document.getElementById('categoryForm');
+const addNewCategory = document.getElementById('addNewCategory');
+const showCategory = document.getElementById('showcCategory');
+const cancelUploadCategoryBtn = document.getElementById('cancelUploadCategoryBtn');
+const saveNewCategory = document.getElementById('saveNewCategory');
+
+const currentCarInfo = document.getElementById('currentCarInfo');
+const addCarForm = document.getElementById('addCarForm');
+const addNewCar = document.getElementById('addNewCar');
+const showCars = document.getElementById('showCars');
+const cancelUploadCarBtn = document.getElementById('cancelUploadCarBtn')
+const saveNewCarBtn = document.getElementById('saveNewCar')
+
+const asideMenuItems = document.querySelectorAll('#asideMenu li');
+
+asideMenuItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Remove the background from all items
+        asideMenuItems.forEach(li => li.classList.remove('bg-gray-700'));
+
+        // Add background to the clicked item
+        this.classList.add('bg-gray-700');
+    });
+});
+
+saveNewCarBtn.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCarInfo()
+    displaySuccessMessage ('خودرو با موفقیت اضافه شد')
+})
+
+cancelUploadCarBtn.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCarInfo()
+})
+
+
+cancelUploadCategoryBtn.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCategory()
+})
+
+saveNewCategory.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCategory()
+    displaySuccessMessage ('دسته‌بندی با موفقیت اضافه شد')
+})
+
+addNewCategory.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCategoryForm()
+})
+
+addNewCar.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCarForm()
+})
+
+
+showCars.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCarInfo()
+})
+
+showCategory.addEventListener('click',(e) => {
+    e.preventDefault()
+    displayCurrentCategory()
+})
 
 
 addNewProduct.addEventListener('click',(e) => {
@@ -32,36 +102,16 @@ cancleUploadproductBtn.addEventListener('click',(e) => {
 saveNewProduct.addEventListener('click',(e) => {
     e.preventDefault()
     displayCurrentProducts()
-    productSuccessMessageDiv.querySelector('span').textContent = 'محصول با موفقیت اضافه شد'
-    productSuccessMessageDiv.classList.add('productSuccess')
-
-    setTimeout(() => {
-        productSuccessMessageDiv.classList.remove('productSuccess')
-    },2000)
+    displaySuccessMessage ('محصول با موفقیت اضافه شد')
 })
 
-showProductManager.addEventListener('click',(e) => {
 
-    if(showToturialItem.classList.contains('bg-gray-700')){
-        showProductManagerItem.classList.add('bg-gray-700')
-        showToturialItem.classList.remove('bg-gray-700')
-    }else{
-        showProductManagerItem.classList.add('bg-gray-700')
-    }
-    
+showProductManager.addEventListener('click',(e) => {
     e.preventDefault()
     displayCurrentProducts()
 })
 
 showToturial.addEventListener('click',(e) => {
-    // showToturialItem.classList.add('bg-gray-700')
-    if(showProductManagerItem.classList.contains('bg-gray-700')){
-        showToturialItem.classList.add('bg-gray-700')
-        showProductManagerItem.classList.remove('bg-gray-700')
-    }else{
-        showToturialItem.classList.add('bg-gray-700')
-    }
-
     e.preventDefault()
     displayToturialUpload()
 })
@@ -80,11 +130,48 @@ uploadNewToturial.addEventListener('click',(e) => {
     },2000)
 })
 
+function displaySuccessMessage (message) {
+    productSuccessMessageDiv.querySelector('span').textContent = message;
+    productSuccessMessageDiv.classList.add('productSuccess')
+
+    setTimeout(() => {
+        productSuccessMessageDiv.classList.remove('productSuccess')
+    },2000)
+}
+
 function displayCurrentProducts(){
     sections.forEach(sec => {
         sec.classList.add('hidden')
     })
     currentProductsInfo.classList.remove('hidden')
+}
+
+function displayCurrentCategory(){
+    sections.forEach(sec => {
+        sec.classList.add('hidden')
+    })
+    currentCategory.classList.remove('hidden')
+}   
+
+function displayCurrentCarInfo(){
+    sections.forEach(sec => {
+        sec.classList.add('hidden')
+    })
+    currentCarInfo.classList.remove('hidden')
+}
+
+function displayCategoryForm() {
+    sections.forEach(sec => {
+        sec.classList.add('hidden')
+    })
+    categoryForm.classList.remove('hidden') 
+}
+
+function displayCarForm() {
+    sections.forEach(sec => {
+        sec.classList.add('hidden')
+    })
+    addCarForm.classList.remove('hidden')
 }
 
 function displayProductUpload(){

@@ -5,14 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle Modal
     function toggleMenuModal() {
-        if(menuModal.classList.contains('activeModal')) {
+        if (menuModal.classList.contains('activeModal')) {
             menuModal.classList.add('closeModal');
             menuModal.addEventListener('animationend', () => {
                 menuModal.classList.remove('activeModal', 'closeModal');
+                menuModal.style.pointerEvents = 'none'; // Disable interaction
+                menuModal.style.visibility = 'hidden';  // Hide after close
             }, { once: true });
         } else {
             menuModal.classList.add('activeModal');
             menuModal.classList.remove('closeModal');
+            menuModal.style.pointerEvents = 'auto';   // Enable interaction
+            menuModal.style.visibility = 'visible';   // Show modal
         }
     }
 
@@ -37,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             menuModal.classList.add('closeModal');
             menuModal.addEventListener('animationend', () => {
                 menuModal.classList.remove('activeModal', 'closeModal');
+                menuModal.style.pointerEvents = 'none';
+                menuModal.style.visibility = 'hidden';
             }, { once: true });
         }
     });

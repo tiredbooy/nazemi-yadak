@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <link rel="shortcut icon" href="/assets/images/carLogos/ico.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="/assets/images/carLogos/ico.png"
+      type="image/x-icon"
+    />
     <title>پنل مدیریت فروشگاه</title>
   </head>
   <body class="bg-gray-900 text-gray-100">
@@ -19,19 +23,20 @@
       </button>
 
       <!-- Sidebar -->
-      <aside class="w-full md:w-64 fixed md:relative md:right-0 -right-full top-0 h-screen bg-gray-800 p-4 transition-all duration-300 z-40 shadow-2xl">
-
+      <aside
+        class="w-full md:w-64 fixed md:relative md:right-0 -right-full top-0 h-screen bg-gray-800 p-4 transition-all duration-300 z-40 shadow-2xl"
+      >
         <div class="flex items-center gap-2 mb-8 border-b border-gray-700 pb-4">
           <i class="fas fa-store text-[#C8102E] text-xl"></i>
           <h2 class="text-xl font-bold">پنل مدیریت</h2>
         </div>
 
         <nav class="mb-4">
-          <ul class="space-y-2">
-            <li id="showProductManager">
+          <ul class="space-y-2" id="asideMenu">
+            <li data-name="showProductManager" id="showProductManager" class=" bg-gray-700 rounded-lg">
               <a
                 href="#"
-                class="flex items-center gap-2 p-2  bg-gray-700 hover:bg-gray-700 rounded-lg group transition-colors"
+                class="flex items-center gap-2 p-2  hover:bg-gray-700 rounded-lg group transition-colors"
               >
                 <i
                   class="fas fa-box text-gray-400 group-hover:text-[#C8102E] transition-colors"
@@ -41,10 +46,39 @@
                 >
               </a>
             </li>
-            <li id="showToturial">
+
+            <li data-name="showCars" id="showCars" class="rounded-lg">
               <a
                 href="#"
-                class="flex items-center gap-2 p-2 hover:bg-gray-700 rounded-lg group transition-colors"
+                class="flex items-center gap-2 p-2 hover:bg-gray-700 group transition-colors"
+              >
+                <i
+                  class="fas fa-car text-gray-400 group-hover:text-[#C8102E] transition-colors"
+                ></i>
+                <span class="text-gray-300 group-hover:text-white"
+                  >خودرو ها</span
+                >
+              </a>
+            </li>
+
+            <li data-name="showcCategory" id="showcCategory" class="rounded-lg">
+              <a
+                href="#"
+                class="flex items-center gap-2 p-2 hover:bg-gray-700 group transition-colors"
+              >
+                <i
+                  class="fas fa-list text-gray-400 group-hover:text-[#C8102E] transition-colors"
+                ></i>
+                <span class="text-gray-300 group-hover:text-white"
+                  >دسته بندی محصول</span
+                >
+              </a>
+            </li>
+
+            <li data-name="showTutorials" id="showTutorials" class=" rounded-lg">
+              <a
+                href="#"
+                class="flex items-center gap-2 p-2 hover:bg-gray-700 group transition-colors"
               >
                 <i
                   class="fas fa-video text-gray-400 group-hover:text-[#C8102E] transition-colors"
@@ -71,12 +105,12 @@
       <!-- Main Content -->
       <main class="flex-1 md:mr-8 p-4 md:p-6">
         <!-- Success Container -->
-         <div class="productSuccessMessage px-6 py-4 rounded-2xl text-lg bg-green-600 text-lightGray absolute top-6 left-[15%] lg:left-[40%] flex flex-row items-center gap-2">
-            <span>
-                
-            </span>
-            <i class="fas fa-check"></i> 
-         </div>
+        <div
+          class="productSuccessMessage px-6 py-4 rounded-2xl text-lg bg-green-600 text-lightGray absolute top-6 left-[15%] lg:left-[40%] flex flex-row items-center gap-2"
+        >
+          <span> </span>
+          <i class="fas fa-check"></i>
+        </div>
 
         <!-- Product Table -->
         <section id="currentProductsInfo" class="">
@@ -106,10 +140,12 @@
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4"
+          <div
+            class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4"
           >
             <h1 class="text-2xl font-bold text-gray-100">مدیریت محصولات</h1>
-            <button id="addNewProduct"
+            <button
+              id="addNewProduct"
               class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 w-full md:w-auto justify-center transition-colors border border-gray-700 hover:border-[#C8102E]"
             >
               <i class="fas fa-plus text-[#C8102E]"></i>
@@ -152,7 +188,104 @@
           </div>
         </section>
 
-        <section id="productForm" class="bg-gray-800 rounded-xl shadow-2xl p-6 max-w-4xl mx-auto hidden"
+        <section id="currentCategory" class="hidden">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4"
+          >
+            <h1 class="text-2xl font-bold text-gray-100">مدیریت دسته بندی</h1>
+            <button
+              id="addNewCategory"
+              class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 w-full md:w-auto justify-center transition-colors border border-gray-700 hover:border-[#C8102E]"
+            >
+              <i class="fas fa-plus text-[#C8102E]"></i>
+              <span>افزودن دسته بندی</span>
+            </button>
+          </div>
+
+          <!-- Products Table -->
+          <div class="bg-gray-800 rounded-lg overflow-x-auto shadow-xl">
+            <table class="w-full min-w-[600px]">
+              <thead class="bg-gray-700">
+                <tr>
+                  <th class="p-4 text-right text-gray-300">نام دسته بندی</th>
+                  <th class="p-4 text-right text-gray-300">عملیات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b border-gray-700 hover:bg-gray-700/50 transition-colors"
+                >
+                  <td class="p-4 text-gray-200">رینگ</td>
+                  <td class="p-4 flex gap-2">
+                    <button
+                      class="text-lightBlue hover:text-darkBlue transition-colors p-2 rounded-lg hover:bg-gray-600/30"
+                    >
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button
+                      class="text-bgRed hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-gray-600/30"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="currentCarInfo" class="hidden">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4"
+          >
+            <h1 class="text-2xl font-bold text-gray-100">مدیریت خودروها</h1>
+            <button
+              id="addNewCar"
+              class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 w-full md:w-auto justify-center transition-colors border border-gray-700 hover:border-[#C8102E]"
+            >
+              <i class="fas fa-plus text-[#C8102E]"></i>
+              <span>افزودن خودرو</span>
+            </button>
+          </div>
+
+          <!-- Products Table -->
+          <div class="bg-gray-800 rounded-lg overflow-x-auto shadow-xl">
+            <table class="w-full min-w-[600px]">
+              <thead class="bg-gray-700">
+                <tr>
+                  <th class="p-4 text-right text-gray-300">نام خودرو</th>
+                  <th class="p-4 text-right text-gray-300">شرکت</th>
+                  <th class="p-4 text-right text-gray-300">عملیات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b border-gray-700 hover:bg-gray-700/50 transition-colors"
+                >
+                  <td class="p-4 text-gray-200">تیگو 8</td>
+                  <td class="p-4 text-gray-200">چری</td>
+                  <td class="p-4 flex gap-2">
+                    <button
+                      class="text-lightBlue hover:text-darkBlue transition-colors p-2 rounded-lg hover:bg-gray-600/30"
+                    >
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button
+                      class="text-bgRed hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-gray-600/30"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <!-- More rows... -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="productForm"
+          class="bg-gray-800 rounded-xl shadow-2xl p-6 max-w-4xl mx-auto hidden"
         >
           <h2
             class="text-2xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-4 flex items-center gap-2"
@@ -294,6 +427,42 @@
                 </div>
               </div>
 
+              <!-- Product Category -->
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3"
+                  >دسته بندی محصول</label
+                >
+                <div class="relative">
+                  <select
+                    class="rounded px-2 py-1 outline-none cursor-pointer text-gray-800"
+                    name=""
+                    id=""
+                  >
+                    <option value="">رینگ</option>
+                    <option value="">چراغ</option>
+                    <option value="">موتور</option>
+                  </select>
+                  <i
+                    class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Product Des -->
+              <div class="relative">  
+                <label class="block text-gray-300 mb-2 pr-3">توضیحات محصول</label>  
+                <div class="relative">  
+                  <textarea  
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all duration-150"  
+                    placeholder="توضیحات محصول"  
+                    rows="4"  
+                  ></textarea>  
+                  <i  
+                    class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"  
+                  ></i>  
+                </div>  
+              </div>
+
             </div>
 
             <!-- Form Actions -->
@@ -314,6 +483,187 @@
               >
                 <i class="fas fa-save"></i>
                 ذخیره محصول
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section id="addCarForm"
+          class="bg-gray-800 rounded-xl shadow-2xl p-6 max-w-4xl mx-auto hidden"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-4 flex items-center gap-2"
+          >
+            <i class="fas fa-plus-circle text-[#C8102E]"></i>
+            افزودن خودرو جدید
+          </h2>
+
+          <form class="space-y-6">
+            <!-- Image Upload Section -->
+            <div class="space-y-4">
+              <label class="block text-gray-300 mb-2">تصویر خودرو</label>
+              <div class="relative group">
+                <input type="file" multiple class="hidden" id="image-upload" />
+                <label
+                  for="image-upload"
+                  class="h-40 w-full flex flex-col items-center justify-center border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-[#C8102E] transition-colors group-hover:border-[#C8102E]"
+                >
+                  <i
+                    class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2 group-hover:text-[#C8102E] transition-colors"
+                  ></i>
+                  <p class="text-gray-400 text-sm">
+                    فایل‌ها را اینجا رها کنید یا برای انتخاب کلیک کنید
+                  </p>
+                  <p class="text-gray-500 text-xs mt-1">
+                    فرمت‌های مجاز: JPG, PNG (حداکثر سایز 1MB)
+                  </p>
+                </label>
+              </div>
+
+              <!-- Image Previews -->
+              <div
+                class="grid grid-cols-3 md:grid-cols-4 gap-3"
+                id="image-previews"
+              >
+                <!-- Preview Thumbnails will be added here dynamically -->
+              </div>
+            </div>
+
+            <!-- Product Details Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Product Name -->
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3">نام خودرو</label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all"
+                    placeholder="نام کامل خودرو را وارد کنید"
+                  />
+                  <i
+                    class="fas fa-box absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Compatible Car -->
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3">شرکت</label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all"
+                    placeholder="شرکت خودروی مرتبط را وارد کنید"
+                  />
+                  <i
+                    class="fas fa-car absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 items-center">
+                <label>فعال / غیر فعال</label>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  class="w-4 h-4 rounded-full cursor-pointer"
+                />
+              </div>
+
+              <div class="flex flex-row gap-3 items-center">
+                <label>نشان دادن در خانه</label>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  class="w-4 h-4 rounded-full cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div
+              class="flex flex-col-reverse md:flex-row gap-4 pt-6 border-t border-gray-700"
+            >
+              <button
+                id="cancelUploadCarBtn"
+                type="button"
+                class="w-full md:w-auto px-6 py-3 rounded-lg border border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
+              >
+                انصراف
+              </button>
+              <button
+                id="saveNewCar"
+                type="submit"
+                class="w-full md:w-auto px-6 py-3 rounded-lg bg-[#C8102E] hover:bg-[#B00E2A] text-white flex items-center justify-center gap-2 transition-colors"
+              >
+                <i class="fas fa-save"></i>
+                ذخیره خودرو
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section id="categoryForm"
+          class="bg-gray-800 rounded-xl shadow-2xl p-6 max-w-4xl mx-auto hidden"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-4 flex items-center gap-2"
+          >
+            <i class="fas fa-plus-circle text-[#C8102E]"></i>
+            افزودن دسته بندی جدید
+          </h2>
+
+          <form class="space-y-6">
+            <!-- Product Details Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Product Name -->
+              <div class="relative">
+                <label class="block text-gray-300 mb-2 pr-3"
+                  >دسته بندی محصول</label
+                >
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all"
+                    placeholder="نام کامل خودرو را وارد کنید"
+                  />
+                  <i
+                    class="fas fa-box absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="flex flex-row items-center gap-2 mt-8">
+                <label for="">فعال / غیر فعال</label>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  class="w-4 h-4 cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div
+              class="flex flex-col-reverse md:flex-row gap-4 pt-6 border-t border-gray-700"
+            >
+              <button
+                id="cancelUploadCategoryBtn"
+                type="button"
+                class="w-full md:w-auto px-6 py-3 rounded-lg border border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
+              >
+                انصراف
+              </button>
+              <button
+                id="saveNewCategory"
+                type="submit"
+                class="w-full md:w-auto px-6 py-3 rounded-lg bg-[#C8102E] hover:bg-[#B00E2A] text-white flex items-center justify-center gap-2 transition-colors"
+              >
+                <i class="fas fa-save"></i>
+                ذخیره دسته بندی
               </button>
             </div>
           </form>
@@ -413,7 +763,9 @@
               </div>
 
               <div class="relative">
-                <label class="block text-gray-300 mb-2 pr-3">توضیحات تکمیلی</label>
+                <label class="block text-gray-300 mb-2 pr-3"
+                  >توضیحات تکمیلی</label
+                >
                 <div class="relative">
                   <input
                     type="text"
