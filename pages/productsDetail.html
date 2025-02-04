@@ -20,12 +20,12 @@
   </head>
   <body>
     <!-- Site Header -->
-    <header>
+    <header class="w-full">
       <nav
         class="bg-bgRed w-full p-5 shadow-xl flex flex-col gap-2"
       >
         <div class="flex items-center justify-between">
-          <!-- Left Section (Menu Icon for Small Screens) -->
+
         <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
@@ -35,14 +35,14 @@
           >
         </div>
 
-        <!-- Center Section (Logo and Company Name) -->
+       
         <div class="flex items-center justify-center gap-2 lg:gap-4">
-          <h2 class="font-bold text-white text-lg lg:text-xl text-center">
+          <h2 class="font-bold text-white text-md lg:text-xl text-center">
             فروشگاه مجهز قطعات یدکی ناظمی 
           </h2>
         </div>
 
-        <!-- Nav Items (Hidden on Small Screens) -->
+        
         <ul class="hidden lg:flex items-center gap-6 text-lightGray text-sm">
           <li>
             <a
@@ -80,9 +80,10 @@
             >
           </li>
         </ul>
-        <!-- Search Box for Larger Screens -->
+        
         <div class="relative hidden lg:block w-96">
           <input
+            id="lgScreenSearchInput"
             class="w-full h-10 rounded-xl px-4 py-2 pr-12 outline-none bg-[#F6F6F6] text-sm text-gray-700 placeholder-gray-500 focus:ring focus:ring-lightGray duration-300"
             type="search"
             placeholder="محصول، برند، دسته نظر مورد خود را وارد کنید..."
@@ -91,19 +92,17 @@
             class="fa-solid fa-magnifying-glass w-5 h-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer hover:text-black"
           ></i>
         </div>
-        <!-- Right Section (Search and User Icon) -->
+        
         <div class="flex items-center gap-2">
-          <!-- Search Icon for Medium Screens -->
+          
           <i
             id="openSearchBarBtn"
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
-        </div>
-        </div>
          
       </nav>
-    </header>
+    </header> 
 
     <main>
       <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -164,6 +163,15 @@
         </ul>
       </div>
       <!-- ----- -->
+
+      <!-- Search Modal -->
+      <div class="relative">
+      
+        <!-- Search Modal -->
+        <div id="searchModal" class="bg-lightGray opacity-0 pointer-events-none lg:flex lg:w-[30%] absolute left-[20%] transform -translate-x-1/3 -translate-y-4 transition-all duration-500 ease-out flex-col gap-8 p-4 z-50 shadow-xl">
+          <!-- Searched Card Template (Will be populated dynamically) -->
+        </div>
+      </div>
 
       <div
         class="max-w-4xl mx-auto p-8 bg-white shadow-xl rounded-2xl mt-10 flex flex-col space-y-6 border border-gray-200"

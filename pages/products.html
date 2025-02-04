@@ -16,12 +16,12 @@
   <body>
     <!-- Site Header -->
     <!-- Site Header -->
-    <header>
+    <header class="w-full">
       <nav
         class="bg-bgRed w-full p-5 shadow-xl flex flex-col gap-2"
       >
         <div class="flex items-center justify-between">
-          <!-- Left Section (Menu Icon for Small Screens) -->
+
         <div id="openMenu" class="flex items-center gap-2 lg:hidden">
           <i class="fas fa-bars cursor-pointer text-white text-lg"></i>
           <a
@@ -31,14 +31,14 @@
           >
         </div>
 
-        <!-- Center Section (Logo and Company Name) -->
+       
         <div class="flex items-center justify-center gap-2 lg:gap-4">
-          <h2 class="font-bold text-white text-lg lg:text-xl text-center">
+          <h2 class="font-bold text-white text-md lg:text-xl text-center">
             فروشگاه مجهز قطعات یدکی ناظمی 
           </h2>
         </div>
 
-        <!-- Nav Items (Hidden on Small Screens) -->
+        
         <ul class="hidden lg:flex items-center gap-6 text-lightGray text-sm">
           <li>
             <a
@@ -76,9 +76,10 @@
             >
           </li>
         </ul>
-        <!-- Search Box for Larger Screens -->
+        
         <div class="relative hidden lg:block w-96">
           <input
+            id="lgScreenSearchInput"
             class="w-full h-10 rounded-xl px-4 py-2 pr-12 outline-none bg-[#F6F6F6] text-sm text-gray-700 placeholder-gray-500 focus:ring focus:ring-lightGray duration-300"
             type="search"
             placeholder="محصول، برند، دسته نظر مورد خود را وارد کنید..."
@@ -87,19 +88,17 @@
             class="fa-solid fa-magnifying-glass w-5 h-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer hover:text-black"
           ></i>
         </div>
-        <!-- Right Section (Search and User Icon) -->
+        
         <div class="flex items-center gap-2">
-          <!-- Search Icon for Medium Screens -->
+          
           <i
             id="openSearchBarBtn"
             class="fa-solid fa-magnifying-glass !block lg:!hidden text-lightGray text-lg hover:text-white cursor-pointer z-50"
           ></i>
 
-        </div>
-        </div>
          
       </nav>
-    </header>
+    </header> 
 
     <main>
       <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -160,6 +159,17 @@
         </ul>
       </div>
       <!-- ----- -->
+
+      <!-- Search Modal -->
+      <div class="relative">
+      
+        <!-- Search Modal -->
+        <div id="searchModal" class="bg-lightGray opacity-0 pointer-events-none lg:flex lg:w-[30%] absolute left-[20%] transform -translate-x-1/3 -translate-y-4 transition-all duration-500 ease-out flex-col gap-8 p-4 z-50 shadow-xl">
+          <!-- Searched Card Template (Will be populated dynamically) -->
+        </div>
+      </div>
+
+
       <div class="w-[80%] mx-auto p-5 flex flex-col lg:flex-row gap-4">
         <!-- Filter Right Section -->
         <div id="filterSetting" class="border rounded-lg w-full lg:w-[20%] flex flex-col px-2 py-3 hidden lg:block transition-all duration-300 ease-in-out transform"> 
@@ -171,7 +181,7 @@
             <li
               class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
             >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
+              <span class="group-hover:text-black duration-150">لنت</span>
               <div
                 class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
               >
@@ -182,44 +192,44 @@
             <li
               class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
             >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
+              <span class="group-hover:text-black duration-150">رینگ</span>
               <div
                 class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
               >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
+                <span class="text-xs group-hover:text-white duration-150">61</span>
               </div>
             </li>
 
             <li
               class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
             >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
+              <span class="group-hover:text-black duration-150">سپر</span>
               <div
                 class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
               >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
+                <span class="text-xs group-hover:text-white duration-150">23</span>
               </div>
             </li>
 
             <li
               class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
             >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
+              <span class="group-hover:text-black duration-150">آینه</span>
               <div
                 class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
               >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
+                <span class="text-xs group-hover:text-white duration-150">46</span>
               </div>
             </li>
 
             <li
               class="flex flex-row justify-between text-gray-500 group cursor-pointer duration-150"
             >
-              <span class="group-hover:text-black duration-150">ام وی ام</span>
+              <span class="group-hover:text-black duration-150">روکش صندلی</span>
               <div
                 class="px-1 text-center rounded-full border cursor-pointer group-hover:bg-bgRed group-hover:border-transparent duration-150"
               >
-                <span class="text-xs group-hover:text-white duration-150">112</span>
+                <span class="text-xs group-hover:text-white duration-150">12</span>
               </div>
             </li>
           </ul>
@@ -229,7 +239,7 @@
           <!-- Top of the product container -->
           <div class="flex flex-row justify-between border-b pb-1 items-center">
             <div class="flex flex-row gap-5 items-center">
-              <i id="openFilterSetting" class="fas fa-sliders-h text-gray-700 hover:text-black block lg:!hidden !cursor-pointer z-50"></i>
+              <i id="openFilterSetting" class="fas fa-sliders-h text-gray-700 hover:text-black block lg:!hidden !cursor-pointer"></i>
               <span class="font-bold text-gray-700 hidden md:!block lg:hidden"> تمام محصولات </span>
             </div>
             <!-- Sort By Filter -->
@@ -243,15 +253,26 @@
                 <option class="" value="">جدید ترین</option>
                 <option value="">ارزان ترین</option>
                 <option value="">گران ترین</option>
-                <option value="">پرفروش ترین</option>
               </select>
+            </div>
+          </div>
+
+          <!-- Products Search Input -->
+          <div class="flex justify-center items-center py-4">
+            <div class="relative w-full lg:w-1/3">
+              <input
+                id="productSearchInput"
+                type="text"
+                placeholder="جستجوی محصول..."
+                class="w-full h-12 border rounded-full px-5 pr-12 outline-none bg-[#F6F6F6] text-sm text-gray-700 placeholder-gray-500 focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-300 ease-in-out cursor-text"
+              />
+              <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer hover:text-blue-600 hover:scale-110 transition-transform duration-300"></i>
             </div>
           </div>
 
 
           <div id="productCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-lg p-4">
             <!-- Product Card -->
-
             <article
               data-aos="fade-left"
               class="productCard bg-lightGray rounded-xl flex flex-col gap-3 overflow-hidden border"
@@ -310,11 +331,11 @@
              <!-- Active Page Button -->
              <div class="rounded bg-bgRed w-9 h-9 text-center px-3 py-2 text-white hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">1</div>
              <!-- Active Page Button -->
-             <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">2</div>
-             <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">3</div>
-             <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">4</div>
-             <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">5</div>
-             <div class="rounded border border-gray-600 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">6</div>
+             <div class="rounded border border-gray-500 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">2</div>
+             <div class="rounded border border-gray-500 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">3</div>
+             <div class="rounded border border-gray-500 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">4</div>
+             <div class="rounded border border-gray-500 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">5</div>
+             <div class="rounded border border-gray-500 w-9 h-9 text-center px-3 py-2 text-steelGray hover:border-transparent hover:bg-bgRed hover:text-lightGray duration-300 cursor-pointer">6</div>
            
            </div>
            <div>
