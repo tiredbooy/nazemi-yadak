@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/tailwind.css" />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <title>Admin</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/images/carLogos/ico.png"
+      type="image/x-icon"
+    />
+    <title>پنل مدیریت فروشگاه</title>
   </head>
   <body class="bg-gray-900 text-gray-100">
     <div class="flex flex-col md:flex-row min-h-screen">
@@ -28,14 +33,10 @@
 
         <nav class="mb-4">
           <ul class="space-y-2" id="asideMenu">
-            <li
-              data-name="showProductManager"
-              id="showProductManager"
-              class="bg-gray-700 rounded-lg"
-            >
+            <li data-name="showProductManager" id="showProductManager" class=" bg-gray-700 rounded-lg">
               <a
                 href="#"
-                class="flex items-center gap-2 p-2 hover:bg-gray-700 rounded-lg group transition-colors"
+                class="flex items-center gap-2 p-2  hover:bg-gray-700 rounded-lg group transition-colors"
               >
                 <i
                   class="fas fa-box text-gray-400 group-hover:text-[#C8102E] transition-colors"
@@ -74,7 +75,7 @@
               </a>
             </li>
 
-            <li data-name="showTutorials" id="showTutorials" class="rounded-lg">
+            <li data-name="showTutorials" id="showTutorials" class=" rounded-lg">
               <a
                 href="#"
                 class="flex items-center gap-2 p-2 hover:bg-gray-700 group transition-colors"
@@ -448,21 +449,20 @@
               </div>
 
               <!-- Product Des -->
-              <div class="relative">
-                <label class="block text-gray-300 mb-2 pr-3"
-                  >توضیحات محصول</label
-                >
-                <div class="relative">
-                  <textarea
-                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all duration-150"
-                    placeholder="توضیحات محصول"
-                    rows="4"
-                  ></textarea>
-                  <i
-                    class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                  ></i>
-                </div>
+              <div class="relative">  
+                <label class="block text-gray-300 mb-2 pr-3">توضیحات محصول</label>  
+                <div class="relative">  
+                  <textarea  
+                    class="w-full bg-gray-700 text-gray-100 rounded-lg px-4 py-3 pr-12 focus:ring-2 focus:ring-[#C8102E] focus:outline-none transition-all duration-150"  
+                    placeholder="توضیحات محصول"  
+                    rows="4"  
+                  ></textarea>  
+                  <i  
+                    class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"  
+                  ></i>  
+                </div>  
               </div>
+
             </div>
 
             <!-- Form Actions -->
@@ -852,6 +852,8 @@
       </main>
     </div>
 
+    <!-- <script src="../assets/scripts/adminDashboard.js"></script> -->
+    <script src="../assets/scripts/adminDashboard.js"></script>
     <script
       src="https://kit.fontawesome.com/febee2a18d.js"
       crossorigin="anonymous"

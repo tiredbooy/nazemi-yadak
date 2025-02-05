@@ -139,54 +139,54 @@ function displaySuccessMessage (message) {
     },2000)
 }
 
-function displayCurrentProducts(){
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    currentProductsInfo.classList.remove('hidden')
-}
+// function displayCurrentProducts(){
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     currentProductsInfo.classList.remove('hidden')
+// }
 
-function displayCurrentCategory(){
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    currentCategory.classList.remove('hidden')
-}   
+// function displayCurrentCategory(){
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     currentCategory.classList.remove('hidden')
+// }   
 
-function displayCurrentCarInfo(){
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    currentCarInfo.classList.remove('hidden')
-}
+// function displayCurrentCarInfo(){
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     currentCarInfo.classList.remove('hidden')
+// }
 
-function displayCategoryForm() {
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    categoryForm.classList.remove('hidden') 
-}
+// function displayCategoryForm() {
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     categoryForm.classList.remove('hidden') 
+// }
 
-function displayCarForm() {
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    addCarForm.classList.remove('hidden')
-}
+// function displayCarForm() {
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     addCarForm.classList.remove('hidden')
+// }
 
-function displayProductUpload(){
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    productForm.classList.remove('hidden')
+// function displayProductUpload(){
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     productForm.classList.remove('hidden')
 
-}
-function displayToturialUpload(){
-    sections.forEach(sec => {
-        sec.classList.add('hidden')
-    })
-    tutorialForm.classList.remove('hidden')
-}
+// }
+// function displayToturialUpload(){
+//     sections.forEach(sec => {
+//         sec.classList.add('hidden')
+//     })
+//     tutorialForm.classList.remove('hidden')
+// }
 
 menuButton.addEventListener('click', () => {  
     const currentRight = parseInt(getComputedStyle(sidebar).right);  
