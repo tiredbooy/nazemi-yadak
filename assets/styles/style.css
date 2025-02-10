@@ -1,142 +1,155 @@
 /* Font Vazir */
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vazirmatn:wght@100..900&display=swap'); */
 
-@font-face {  
-  font-family: 'Vazirmatn';  
-  src: url('../font/Vazirmatn-VariableFont_wght.ttf') format('truetype'); /* Adjust the path accordingly */  
-  font-weight: 100 900; /* Set variable font weight range if applicable */  
-  font-style: normal; /* Adjust if the font has styles like italic */  
-}  
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../font/Vazirmatn-VariableFont_wght.ttf') format('truetype');
+  /* Adjust the path accordingly */
+  font-weight: 100 900;
+  /* Set variable font weight range if applicable */
+  font-style: normal;
+  /* Adjust if the font has styles like italic */
+}
 
 
 * {
   box-sizing: border-box;
 }
 
-body{
-    font-family: "Vazirmatn", serif;
-    overflow-x: hidden;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+body {
+  font-family: "Vazirmatn", serif;
+  overflow-x: hidden;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-/* Add these CSS classes for animation */  
-@keyframes slideIn {  
-    from {  
-      opacity: 0;  
-      transform: translateX(-20px);  
-    }  
-    to {  
-      opacity: 1;  
-      transform: translateX(0);  
-    }  
-  }  
-  
-  @keyframes slideOut {  
-    from {  
-      opacity: 1;  
-      transform: translateX(0);  
-    }  
-    to {  
-      opacity: 0;  
-      transform: translateX(-20px);  
-    }  
-  }  
-  
-  #filterSetting {  
-    transition: all 0.3s ease-in-out;  
-    will-change: transform, opacity;  
-  }  
-  
-  #filterSetting.animate-slide-in {  
-    animation: slideIn 0.3s ease-out forwards;  
-  }  
-  
-  #filterSetting.animate-slide-out {  
-    animation: slideOut 0.3s ease-in forwards;  
-  }  
-  
-  .tutorial-card {  
-    scroll-snap-align: center;  
-  }  
-  
-  #tutorialCardContainer {  
-    scroll-snap-type: x mandatory;  
-    -webkit-overflow-scrolling: touch;  
-  }  
-
-  .productSuccessMessage {
+/* Add these CSS classes for animation */
+@keyframes slideIn {
+  from {
     opacity: 0;
+    transform: translateX(-20px);
   }
 
-  .productSuccess {
-    animation: product-success 1s forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  #menuModal {
+  to {
     opacity: 0;
-    pointer-events: none; /* Disable interactions by default */
-    visibility: hidden;   /* Hide modal by default */
+    transform: translateX(-20px);
+  }
+}
+
+#filterSetting {
+  transition: all 0.3s ease-in-out;
+  will-change: transform, opacity;
+}
+
+#filterSetting.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+#filterSetting.animate-slide-out {
+  animation: slideOut 0.3s ease-in forwards;
+}
+
+.tutorial-card {
+  scroll-snap-align: center;
+}
+
+#tutorialCardContainer {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.productSuccessMessage {
+  opacity: 0;
+}
+
+.productSuccess {
+  animation: product-success 1s forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+}
+
+#menuModal {
+  opacity: 0;
+  pointer-events: none;
+  /* Disable interactions by default */
+  visibility: hidden;
+  /* Hide modal by default */
 }
 
 #menuModal.activeModal {
-    pointer-events: auto; /* Enable interactions when active */
-    visibility: visible;  /* Make modal visible when active */
+  pointer-events: auto;
+  /* Enable interactions when active */
+  visibility: visible;
+  /* Make modal visible when active */
 }
 
 #menuModal.closeModal {
-    pointer-events: none; /* Disable interactions during closing animation */
-    visibility: hidden;   /* Hide modal after closing */
-}
-  .activeModal{
-    animation: openMenu .5s forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-    animation-delay: 0s;
-  }
-
-  .closeModal{
-    animation: closeModalAni .5s forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-  }
-
-
-  @keyframes product-success {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
+  pointer-events: none;
+  /* Disable interactions during closing animation */
+  visibility: hidden;
+  /* Hide modal after closing */
 }
 
-@keyframes openMenu{
+.activeModal {
+  animation: openMenu .5s forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  animation-delay: 0s;
+}
+
+.closeModal {
+  animation: closeModalAni .5s forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+}
+
+
+@keyframes product-success {
   0% {
-      opacity: 0;
-      transform: translateX(100%);
+    opacity: 0;
+    transform: translateY(-100%);
   }
 
   100% {
-      opacity: 1;
-      transform: translateX(0%);
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 
-@keyframes closeModalAni{
+@keyframes openMenu {
   0% {
-      opacity: 1;
-      transform: translateX(0%);
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes closeModalAni {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 
 
   100% {
-      opacity: 0;
-      transform: translateX(100%);
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 
@@ -145,12 +158,15 @@ body{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .snap-slider {
   scroll-snap-type: x mandatory;
 }
+
 .snap-card {
   scroll-snap-align: start;
 }
@@ -165,6 +181,81 @@ body{
 }
 
 @keyframes scroll {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
+
+:root {
+  --swiper-navigation-color: #000000;
+  /* Tailwind's gray-700 */
+
+}
+
+/* .swiper-pagination-bullet {
+  margin-top: 20px !important;
+  width: 10px !important;
+  height: 10px !important;
+  background: #cbd5e0 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #45bbf1 !important;
+}
+
+.swiper {
+  position: relative;
+} */
+
+#latestProducts .swiper-button-next,
+#latestProducts .swiper-button-prev {
+  display: none !important;
+}
+
+#latestProducts .swiper-pagination-bullet {
+  @apply w-2 h-2 bg-gray-300 mx-1 opacity-100;
+  /* margin-top: 20px !important;
+  width: 10px !important;
+  height: 10px !important;
+  background: #cbd5e0 !important;
+  opacity: 1 !important; */
+}
+
+#latestProducts .swiper-pagination-bullet-active {
+   @apply bg-[#C8102E]; 
+  /* background: #C8102E !important; */
+}
+
+#latestProducts .swiper-wrapper {
+  padding-bottom: 2rem;
+  /* Space for pagination */
+}
+
+#tutorialSection .swiper-button-next,
+#tutorialSection .swiper-button-prev {
+  display: none !important;
+}
+
+/* Fix button position in loop mode */
+.mySwiper2 {
+  position: relative;
+}
+
+.mySwiper2 .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+
+/* 
+.swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%234c71ae'%2F%3E%3C%2Fsvg%3E") !important;
+}
+
+.swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%234c71ae'%2F%3E%3C%2Fsvg%3E") !important;
+} */

@@ -1,3 +1,0 @@
-Hidden Loggin for Admin
-
-/admin/login

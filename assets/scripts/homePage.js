@@ -1,85 +1,99 @@
-
-// Hero Section Slider  
+// Hero Section Slider
 let heroCurrentIndex = 0;
 
 function changeSlide(direction) {
-  const slides = document.querySelectorAll('.slide');
-  const titles = [
-    "بهترین لوازم یدکی برای ماشین‌های چینی",
-    "آموزش تعویض لوازم یدکی خودروهای چینی",
-    "پشتیبانی و مشاوره خرید لوازم یدکی"
-  ];
-  const descriptions = [
-    "ما ارائه‌دهنده بهترین و باکیفیت‌ترین لوازم یدکی برای انواع خودروهای چینی هستیم. کیفیت تضمینی، قیمت مناسب و ارسال سریع به سراسر کشور.",
-    "در بخش آموزشی سایت ما، یاد بگیرید چگونه به آسانی و با اطمینان قطعات یدکی خودروهای چینی خود را تعویض کنید.",
-    "تیم پشتیبانی ما آماده است تا شما را در انتخاب بهترین قطعات یدکی متناسب با خودروتان راهنمایی کند."
-  ];
-  const buttons = ["مشاهده محصولات", "یاد بگیرید بیشتر", "تماس با ما"];
+  const slides = document.querySelectorAll(".slide");
 
-  slides[heroCurrentIndex].style.opacity = '0';
-  heroCurrentIndex = (heroCurrentIndex + direction + slides.length) % slides.length;
-  slides[heroCurrentIndex].style.opacity = '1';
-
-  document.getElementById('heroSectionTitle').textContent = titles[heroCurrentIndex];
-  document.getElementById('heroSectionDes').textContent = descriptions[heroCurrentIndex];
-  document.querySelector('.hero-button').textContent = buttons[heroCurrentIndex];
+  slides[heroCurrentIndex].style.opacity = "0";
+  heroCurrentIndex =
+    (heroCurrentIndex + direction + slides.length) % slides.length;
+  slides[heroCurrentIndex].style.opacity = "1";
 }
 
 // Event Listeners
-document.getElementById('prevSlide').onclick = () => changeSlide(-1);
-document.getElementById('nextSlide').onclick = () => changeSlide(1);
-
+document.getElementById("prevSlide").onclick = () => changeSlide(-1);
+document.getElementById("nextSlide").onclick = () => changeSlide(1);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("tutorialCardContainer");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const progressIndicator = document.getElementById("progressIndicator");
-    let currentIndex = 0;
-    let direction = -1; // Start moving left (rtl direction)
-    let autoSlide;
 
-    function updateProgress() {
-        const totalWidth = container.scrollWidth - container.clientWidth;
-        const scrollPosition = container.scrollLeft;
-        const progress = (scrollPosition / totalWidth) * 100;
-        progressIndicator.style.width = `${progress}%`;
-    }
+  var swiper1 = new Swiper(".mySwiper1", {
+    loop: true,
+    spaceBetween: 5,
+    slidesPerView: 1.5,
 
-    function slide() {
-        const cardWidth = container.children[0].offsetWidth + 24; // card width + gap
-        container.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
-        currentIndex += direction;
+    // Responsive breakpoints
+    breakpoints: {
+      640: { slidesPerView: 2.5, spaceBetween: 40 },
+      1024: { slidesPerView: 4.5, spaceBetween: 50 },
+    },
 
-        // Direction reversal logic
-        if (currentIndex <= 0) {
-            direction = 1; // Change direction to right
-        } else if (currentIndex >= container.children.length - 1) {
-            direction = -1; // Change direction to left
-        }
-    }
+    navigation: { 
+      nextEl: ".swiper-button-prev-custom",
+      prevEl: ".swiper-button-next-custom",
+      disabledClass: "opacity-50 pointer-events-none",
+    },
 
-    function startAutoSlide() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(slide, 2000);
-    }
+    pagination: {
+      el: ".product-swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+      renderBullet: function (index, className) {
+        return (
+          '<span class="' +
+          className +
+          ' w-2 h-2 bg-gray-300 rounded-full mx-1 cursor-pointer"></span>'
+        );
+      },
+    },
 
-    nextBtn.addEventListener("click", () => {
-        direction = 1;
-        slide();
-        startAutoSlide();
-    });
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
 
-    prevBtn.addEventListener("click", () => {
-        direction = -1;
-        slide();
-        startAutoSlide();
-    });
+  var swiper2 = new Swiper("#tutorialSection .mySwiper2", {
+    loop: true,
+    // loopAdditionalSlides: 4,
+    spaceBetween: 16,
+    slidesPerView: 1.5,
+    // centeredSlides: true,
 
-    // Update progress bar during scroll
-    container.addEventListener("scroll", updateProgress);
-    container.addEventListener("mouseenter", () => clearInterval(autoSlide));
-    container.addEventListener("mouseleave", startAutoSlide);
+    breakpoints: {
+      640: {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+        centeredSlides: false,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
 
-    startAutoSlide();
+    navigation: {
+      nextEl: "#prevBtn",
+      prevEl: "#nextBtn",
+      disabledClass: "opacity-50 pointer-events-none",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+      renderBullet: function (index, className) {
+        return (
+          '<span class="' +
+          className +
+          ' w-2 h-2 bg-gray-300 rounded-full mx-1 cursor-pointer"></span>'
+        );
+      },
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
+
 });

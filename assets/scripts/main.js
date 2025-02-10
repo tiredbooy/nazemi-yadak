@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchData(input) {
     try {
       let response = await fetch(
-        `http://127.0.0.1:8000/products/api/search/?q=${input}`
+        `https://nazemiyadak.ir/product/api/search/?q=${input}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -80,22 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createSearchResultCard(product) {
     return `
-      <div class="flex items-center justify-between gap-3 cursor-pointer hover:bg-gray-200/50 duration-150">
-        <div class="flex flex-row items-center gap-3">
-          <img src="${product.image}" alt="${product.name}" class="w-16 h-16 rounded-md object-cover" />
-          <div class="flex flex-col">
-            <span class="text-steelGray font-semibold cursor-pointer hover:text-black duration-150">
-              ${product.name}
-            </span>
-            <span class="text-gray-600 text-sm">
-              ${product.brand}
-            </span>
+      <a href="https://nazemiyadak.ir/product/${product.slug}" class="block">
+        <div class="flex items-center justify-between gap-3 cursor-pointer hover:bg-gray-200/50 duration-150 p-2 rounded-md">
+          <div class="flex flex-row items-center gap-3">
+            <img src="${product.image}" alt="${product.name}" class="w-16 h-16 rounded-md object-cover" />
+            <div class="flex flex-col">
+              <span class="text-steelGray font-semibold hover:text-black duration-150">
+                ${product.name}
+              </span>
+              <span class="text-gray-600 text-sm">
+                ${product.brand}
+              </span>
+            </div>
           </div>
+          <span class="text-bgRed font-bold">
+            ${product.price} تومان
+          </span>
         </div>
-        <span class="text-bgRed font-bold">
-          ${product.price} تومان
-        </span> 
-      </div>
+      </a>
     `;
   }
 
@@ -119,25 +121,46 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   };
 
-  lgScreenSearchInput.addEventListener("keyup", async (event) => {
-    const searchInputValue = lgScreenSearchInput.value.toLowerCase().trim();
-    searchModal.innerHTML = "";
+  let searchTimeout;
+  let lastSearchQuery = ""; // Track the last search input
+  let lastRequestId = 0; // Track request order
 
-    if (searchInputValue) {
-      showModal();
+  lgScreenSearchInput.addEventListener("keyup", (event) => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(async () => {
+      const searchInputValue = lgScreenSearchInput.value.toLowerCase().trim();
 
-      const products = await fetchData(searchInputValue);
+      // Prevent redundant requests for the same query
+      if (searchInputValue === lastSearchQuery) return;
+      lastSearchQuery = searchInputValue;
 
-      if (products.length > 0) {
-        const searchResultsHTML = products.map(createSearchResultCard).join("");
-        searchModal.insertAdjacentHTML("beforeend", searchResultsHTML);
+      searchModal.innerHTML = "";
+
+      if (searchInputValue) {
+        showModal();
+        const requestId = ++lastRequestId; // Increment request ID
+
+        const products = await fetchData(searchInputValue);
+
+        // Ignore old results if a new request was made
+        if (requestId !== lastRequestId) return;
+
+        if (products.length > 0) {
+          const uniqueProducts = Array.from(
+            new Map(products.map((p) => [p.id, p])).values()
+          );
+
+          searchModal.innerHTML = uniqueProducts
+            .map(createSearchResultCard)
+            .join("");
+        } else {
+          searchModal.innerHTML =
+            '<div class="text-center text-gray-500">نتیجه‌ای یافت نشد</div>';
+        }
       } else {
-        searchModal.innerHTML =
-          '<div class="text-center text-gray-500">نتیجهای یافت نشد</div>';
+        hideModal();
       }
-    } else {
-      hideModal();
-    }
+    }, 300);
   });
 
   document.addEventListener("click", (event) => {
